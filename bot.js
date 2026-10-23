@@ -125,7 +125,7 @@ if (!usersPublic.get(quote.guid).name) return useBot(`${prefix}randomquote`);
         botcmd(`img https://files.catbox.moe/qkbzrk.jpeg`);
     }
     if (text === prefix + "source") {
-        sendMsg("-look up \"dudeyd/bonziworld-noobiebot\" on github");
+        sendMsg("-look up dudeyd/bonziworld-noobiebot on github");
     }
     if (text === prefix + "parrot") {
         botcmd(`img https://files.catbox.moe/9xklj5.jpeg`);
