@@ -307,7 +307,6 @@ if (text === prefix + "uptime") {
 			}
 
 }
-thisbot.on("nuked", () => { thisbot.disconnect() });
 thisbot.on("talk", (message) => {
     if (showErrorInChat === true){
     try {
