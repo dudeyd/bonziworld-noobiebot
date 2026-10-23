@@ -1,0 +1,88 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+body,
+body * {
+    font-family: "Tahoma", sans-serif;
+}
+
+input[type="text"] {
+    background-color: #fff;
+    border: 1px inset #AAA;
+    color: #000;
+}
+
+.xp_bubble,
+#content {
+    position: relative;
+    background: #ffffe1;
+    color: #000;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    border: #000000 solid 1px;
+}
+
+#rss {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+@font-face {
+    font-family: 'Tahoma';
+    src: url("font/Tahoma/Tahoma.eot#iefix") format("embedded-opentype"), url("font/Tahoma/Tahoma.woff") format("woff"), url("https://file.garden/afT70JSNBTQ_DR1k/Tahoma.ttf") format("truetype"), url("font/Tahoma/Tahoma.svg#Tahoma") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    overflow-y: auto;
+}
+
+body {
+    background-image: url("https://file.garden/afT70JSNBTQ_DR1k/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body {
+  background-color: #4da133;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #2a591c;
+  }
+}
+
+#content {
+    width: 75%;
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 16px 32px;
+    background-color: rgba(255, 255, 225, 0.8);
+    overflow: hidden;
+}
+
+#bonziworld {
+    display: none;
+}
+
+#titlebar {
+    background-color: rgba(109, 51, 160, 0.85);
+}
+figure {
+    float: right;
+    border: 1px solid #555555;
+    margin: 0;
+    padding: 3px;
+}
+
+figcaption {
+    font-size: 0.8em;
+    color: #555555;
+}
