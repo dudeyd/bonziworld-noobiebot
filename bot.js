@@ -1,4 +1,4 @@
-let thisbot = io("//");
+let thisbot = io(location.href);
 let roomData = {};
 const thewhys = [
             `WHY WHY WHY WHY WHY`,
