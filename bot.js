@@ -145,7 +145,7 @@ if (text === prefix + "camel") {
         sendMsg(`-moved to ${prefix}links`);
     }
     if (text === prefix + "links") {
-      sendMsg("-https://file.garden/afT70JSNBTQ_DR1k/NoobieBot/links");
+      sendMsg("-https://github.com/dudeyd/bonziworld-noobiebot (if it's blocked look up bonziworld-noobiebot on github)");
     }
     /*if (text.startsWith(prefix + "gokid")) {
     if (lockcmd === true) {
