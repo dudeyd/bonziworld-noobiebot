@@ -38,7 +38,7 @@ const help2 = `- ^^%%$r$${botname} Commands 2/2$r$%%^^ \\n` +
             `Goodbye everyone! I'm going to the purple void!`,
             `Weeeeeeeeeeeeeeeeeee`,
         ]; unused*/
-        const nukeline = nukelines[Math.floor(Math.random() * nukelines.length)];
+        /*const nukeline = nukelines[Math.floor(Math.random() * nukelines.length)];*/
 const otherUserNukes = [
             "KaBLAM! There goes that bonzi",
             "KaBOOM! That bonzi did a boom boom!",
