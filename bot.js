@@ -32,14 +32,12 @@ const help = `- ^^%%$r$${botname} Commands 1/2$r$%%^^ \n` +
 
 const help2 = `- ^^%%$r$${botname} Commands 2/2$r$%%^^ \\n` +
 `**--${prefix}stupidbitch (name)--\\n ${prefix}gibberish\\n ${prefix}stfu (name)\\n ${prefix}fuk (name)\\n ${prefix}asknoobie (question)\\n ${prefix}myinfo\\n ${prefix}uptime\\n ${prefix}hostinfo\\n${prefix}why\\n ${prefix}randomquote`;
-const nukelines = [
+/*const nukelines = [
             `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`,
             `I JUST DID A BOOM BOOM!`,
             `Goodbye everyone! I'm going to the purple void!`,
             `Weeeeeeeeeeeeeeeeeee`,
-            `KaBLAM! There goes myself.`,
-            `AAAAAAAAAAAAAAAAAAAAA!`
-        ];
+        ]; unused*/
         const nukeline = nukelines[Math.floor(Math.random() * nukelines.length)];
 const otherUserNukes = [
             "KaBLAM! There goes that bonzi",
@@ -121,13 +119,13 @@ if (!usersPublic.get(quote.guid).name) return useBot(`${prefix}randomquote`);
     }
 
         if (text === prefix + "aplle") {
-        return sendMsg("ew, apple.\\n yay, aplle");
+        return sendMsg("aplle. aplle pie. aplle bottle. aplle everything.");
     }
     if (text === prefix + "llama") {
         botcmd(`img https://files.catbox.moe/qkbzrk.jpeg`);
     }
     if (text === prefix + "source") {
-        sendMsg(`-moved to ${prefix}links`);
+        sendMsg(`-its on github`);
     }
     if (text === prefix + "parrot") {
         botcmd(`img https://files.catbox.moe/9xklj5.jpeg`);
@@ -142,10 +140,10 @@ if (text === prefix + "camel") {
         sendMsg(`[insert noob spinning gif]`);
     }
     if (text === prefix + "changelog") {
-        sendMsg(`-moved to ${prefix}links`);
+        /*cmd deleted*/
     }
-    if (text === prefix + "links") {
-      sendMsg("-https://github.com/dudeyd/bonziworld-noobiebot (if it's blocked look up bonziworld-noobiebot on github)");
+    if (text === prefix + "github") {
+      sendMsg("-dudeyd/bonziworld-noobiebot");
     }
     /*if (text.startsWith(prefix + "gokid")) {
     if (lockcmd === true) {
@@ -309,7 +307,7 @@ if (text === prefix + "uptime") {
 			}
 
 }
-thisbot.on("nuked", () => { sendMsg(nukeline) });
+thisbot.on("nuked", () => { thisbot.disconnect() });
 thisbot.on("talk", (message) => {
     if (showErrorInChat === true){
     try {
