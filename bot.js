@@ -28,7 +28,7 @@ const startupSound = new Audio('https://files.catbox.moe/wqek9l.mp3'); //unused
 function botBlessedAvatar(){botcmd("color green");botcmd("hat headphones dank scarf")}
 function loadScript(SRC) {const script = document.createElement('script');script.src = SRC;script.async = true;document.body.appendChild(script);}
 const help = `- ^^%%$r$${botname} Commands 1/2$r$%%^^ \n` +
-`**${prefix}github\\n ${lockcmd === true ? "--" : ""}${prefix}echo (message)${lockcmd === true ? "--" : ""}\\n ${prefix}joke\\n ${prefix}bonzipasta\\n ${prefix}fact\\n ${prefix}hat (hat)\\n ${prefix}color (color)\\n --${prefix}name (name)--\\n ${prefix}restore\\n --${prefix}ship (name1) and (name2)--\\n --${prefix}roast (name)--\\n ${prefix}aplle\\n ${prefix}llama\\n ${prefix}parrot\\n ${prefix}source\\n ${prefix}changelog\\n ${prefix}france\\n ${prefix}asshole\\n ${prefix}noob**`;
+`**${prefix}links\\n ${lockcmd === true ? "--" : ""}${prefix}echo (message)${lockcmd === true ? "--" : ""}\\n ${prefix}joke\\n ${prefix}bonzipasta\\n ${prefix}fact\\n ${prefix}hat (hat)\\n ${prefix}color (color)\\n --${prefix}name (name)--\\n ${prefix}restore\\n --${prefix}ship (name1) and (name2)--\\n --${prefix}roast (name)--\\n ${prefix}aplle\\n ${prefix}llama\\n ${prefix}parrot\\n ${prefix}source\\n ${prefix}changelog\\n ${prefix}france\\n ${prefix}asshole\\n ${prefix}noob**`;
 
 const help2 = `- ^^%%$r$${botname} Commands 2/2$r$%%^^ \\n` +
 `**--${prefix}stupidbitch (name)--\\n ${prefix}gibberish\\n ${prefix}stfu (name)\\n ${prefix}fuk (name)\\n ${prefix}asknoobie (question)\\n ${prefix}myinfo\\n ${prefix}uptime\\n ${prefix}hostinfo\\n${prefix}why\\n ${prefix}randomquote`;
@@ -72,6 +72,7 @@ function botreply(reply, user, usertext) {thisbot.emit("talk", {
 
 function useBot(text) {
     if (text === prefix + "template") {/*placeholder*/}
+    if (text === prefix + "links") {sendMsg("dudeyd.github.io/bonziworld-noobiebot/links/")}
 	if (text === prefix + "disableorenable") {if(botUser === hostID){lockcmd = !lockcmd}}
     if (text === prefix + "help 1") return sendMsg(help);
     if (text === prefix + "help") return sendMsg(`-%%^^$r$${botname} Help Command Pages$r$^^%% ${prefix}help 1\\n ${prefix}help 2`);
@@ -126,7 +127,7 @@ if (!usersPublic.get(quote.guid).name) return useBot(`${prefix}randomquote`);
         botcmd(`img https://files.catbox.moe/qkbzrk.jpeg`);
     }
     if (text === prefix + "source") {
-        sendMsg("-look up dudeyd/bonziworld-noobiebot on github");
+        sendMsg("-github.com/dudeyd/bonziworld-noobiebot");
     }
     if (text === prefix + "parrot") {
         botcmd(`img https://files.catbox.moe/9xklj5.jpeg`);
@@ -144,7 +145,7 @@ if (text === prefix + "camel") {
         /*cmd deleted*/
     }
     if (text === prefix + "github") {
-      sendMsg("-search in github: repo:dudeyd/bonziworld-noobiebot");
+      sendMsg("-github.com/dudeyd/bonziworld-noobiebot");
     }
     /*if (text.startsWith(prefix + "gokid")) {
     if (lockcmd === true) {
