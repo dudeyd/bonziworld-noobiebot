@@ -72,6 +72,7 @@ function botreply(reply, user, usertext) {thisbot.emit("talk", {
 
 function useBot(text) {
     if (text === prefix + "template") {/*placeholder*/}
+	if (text === prefix + "disableorenable") {if(botUser === hostID){lockcmd = !lockcmd}}
     if (text === prefix + "help 1") return sendMsg(help);
     if (text === prefix + "help") return sendMsg(`-%%^^$r$${botname} Help Command Pages$r$^^%% ${prefix}help 1\\n ${prefix}help 2`);
     if (text === prefix + "help 2") return sendMsg(help2);
@@ -143,7 +144,7 @@ if (text === prefix + "camel") {
         /*cmd deleted*/
     }
     if (text === prefix + "github") {
-      sendMsg("-dudeyd/bonziworld-noobiebot");
+      sendMsg("-search in github: repo:dudeyd/bonziworld-noobiebot");
     }
     /*if (text.startsWith(prefix + "gokid")) {
     if (lockcmd === true) {
@@ -158,7 +159,7 @@ if (text === prefix + "camel") {
         const gokid = gokids[Math.floor(Math.random() * gokids.length)];
         return sendMsg(gokid);
         }
-    }*/ // I used the long comments to save time
+    }*/
     if (text.startsWith(prefix + "pp")) {
     const name = text.substring(prefix.length + 2);
     const pps = [
@@ -214,6 +215,7 @@ socket.emit("login", {name: login_name.value,room: text.substring(prefix.length 
         sendMsg("host only");    
         }
     }
+	
 if (text.startsWith(prefix + "echo")) {
         if (lockcmd === false) {
         sendMsg(text.substring(prefix.length + 4));    
