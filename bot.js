@@ -28,7 +28,7 @@ const startupSound = new Audio('https://files.catbox.moe/wqek9l.mp3'); //unused
 function botBlessedAvatar(){botcmd("color green");botcmd("hat headphones dank scarf")}
 function loadScript(SRC) {const script = document.createElement('script');script.src = SRC;script.async = true;document.body.appendChild(script);}
 const help = `- ^^%%$r$${botname} Commands 1/2$r$%%^^ \n` +
-`**${prefix}links\\n ${lockcmd === true ? "--" : ""}${prefix}echo (message)${lockcmd === true ? "--" : ""}\\n ${prefix}joke\\n ${prefix}bonzipasta\\n ${prefix}fact\\n ${prefix}hat (hat)\\n ${prefix}color (color)\\n --${prefix}name (name)--\\n ${prefix}restore\\n --${prefix}ship (name1) and (name2)--\\n --${prefix}roast (name)--\\n ${prefix}aplle\\n ${prefix}llama\\n ${prefix}parrot\\n ${prefix}source\\n ${prefix}changelog\\n ${prefix}france\\n ${prefix}asshole\\n ${prefix}noob**`;
+`**${prefix}links\\n ${prefix}echo (message)\\n ${prefix}joke\\n ${prefix}bonzipasta\\n ${prefix}fact\\n ${prefix}hat (hat)\\n ${prefix}color (color)\\n --${prefix}name (name)--\\n ${prefix}restore\\n --${prefix}ship (name1) and (name2)--\\n --${prefix}roast (name)--\\n ${prefix}aplle\\n ${prefix}llama\\n ${prefix}parrot\\n ${prefix}source\\n ${prefix}changelog\\n ${prefix}france\\n ${prefix}asshole\\n ${prefix}noob**`;
 
 const help2 = `- ^^%%$r$${botname} Commands 2/2$r$%%^^ \\n` +
 `**--${prefix}stupidbitch (name)--\\n ${prefix}gibberish\\n ${prefix}stfu (name)\\n ${prefix}fuk (name)\\n ${prefix}asknoobie (question)\\n ${prefix}myinfo\\n ${prefix}uptime\\n ${prefix}hostinfo\\n${prefix}why\\n ${prefix}randomquote`;
@@ -127,7 +127,7 @@ if (!usersPublic.get(quote.guid).name) return useBot(`${prefix}randomquote`);
         botcmd(`img https://files.catbox.moe/qkbzrk.jpeg`);
     }
     if (text === prefix + "source") {
-        sendMsg("-moved to ".. prefix.. "links");
+        sendMsg(`-moved to ${prefix}links`);
     }
     if (text === prefix + "parrot") {
         botcmd(`img https://files.catbox.moe/9xklj5.jpeg`);
