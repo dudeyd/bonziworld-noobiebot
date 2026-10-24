@@ -127,7 +127,7 @@ if (!usersPublic.get(quote.guid).name) return useBot(`${prefix}randomquote`);
         botcmd(`img https://files.catbox.moe/qkbzrk.jpeg`);
     }
     if (text === prefix + "source") {
-        sendMsg("-moved to ", prefix, "links");
+        sendMsg("-moved to ".. prefix.. "links");
     }
     if (text === prefix + "parrot") {
         botcmd(`img https://files.catbox.moe/9xklj5.jpeg`);
@@ -282,8 +282,7 @@ const gibberishmessage = ["h@x du da de d3!", "tygtyty@", "@plle p0i", "sal@d@",
  }
 if (text === prefix + "pollwhy") {
                 botcmd("advpoll WHY WHY WHY WHY WHY;YOU GET NERVOUS MAN;WHYWHYWHYHYHYHYHYHHYHYHYHYH");
-            }
-if (text === prefix + "outfit") {alert(text.substring(prefix.length + 3).trim().split(" "))}
+}
 if (text.startsWith(prefix + "ack")) {
     /* if (lockcmd === true) { */
             sendMsg("disabled")
