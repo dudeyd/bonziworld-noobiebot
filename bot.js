@@ -1,4 +1,5 @@
 let thisbot = io("//");
+let botSees = new Map;
 let roomData = {};
 const thewhys = [
             `WHY WHY WHY WHY WHY`,
@@ -341,6 +342,15 @@ function unlockAskCreator() {
 }
 thisbot.on("loginFail", (data) => {
 speak.play(`Failed to load NoobieBot: ${data.reason}`);
+});
+socket.on("updateAll", (data) => {
+	botSees.clear();
+	for (let [id, user] of entries(data.usersPublic)) {
+		botSees.set(id, user);
+	}
+});
+thisbot.on("update", (data) => {
+	botSees.set(data.guid, data.userPublic);
 });
 thisbot.on("leave", (data) => {
 if (data.guid === hostID) {
