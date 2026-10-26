@@ -21,6 +21,49 @@ let askCommandDisabled = false;
 let botUser = null;
 const startTime = Date.now();
 const prefix = "n*";
+// filter bad words and any type of slurs
+const WORD_FILTER = {
+    enabled: true,
+    words: ["nig[[3]]", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype"],
+    replacement: "That word is blocked!"
+};
+function replaceFilteredWords(text) {
+    if (!WORD_FILTER.enabled || typeof text !== 'string') {
+        return text;
+    }
+
+    let cleanText = text.replace(/\$[a-z0-9]+\$/gi, "");
+
+    cleanText = cleanText.replace(/[\u200B-\u200D\uFEFF\u0000-\u001F\u007F-\u009F]/g, "");
+    
+    const leetMap = {
+        'π': 'n', 'ñ': 'n', 'ń': 'n', 
+        '1': 'i', '!': 'i', '|': 'i', '¡': 'i', 'y': 'i', 'í': 'i', 'ì': 'i', 'ī': 'i', 'î': 'i', 'į': 'i', 'ï': 'i',
+        '3': 'e', '€': 'e', '£': 'e', 'ê': 'e', 'ė': 'e', 'é': 'e', 'ē': 'e', 'ë': 'e', 'è': 'e', 'ę': 'e',
+        '4': 'a', '@': 'a', 'λ': 'a', 'à': 'a', 'á': 'a', 'ã': 'a', 'å': 'a', 'â': 'a', 'ā': 'a', 'ä': 'a', 'ą': 'a', 'ª': 'a',
+        '0': 'o', 'ø': 'o', 'ó': 'o', 'ô': 'o', 'ō': 'o', 'ö': 'o', 'õ': 'o', 'ò': 'o',
+        '5': 's', '$': 's', '§': 's', 'ß': 's',
+        '7': 't', '+': 't',
+        '8': 'b',
+        '9': 'g'
+    };
+    cleanText = cleanText.toLowerCase().split('').map(char => leetMap[char] || char).join('');
+
+    cleanText = cleanText.replace(/[^a-z0-9]/g, "");
+
+    for (const word of WORD_FILTER.words) {
+        if (!word) continue;
+        
+        const targetWord = word.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+        if (cleanText.includes(targetWord)) {
+            // Intercept the message payload entirely
+            return WORD_FILTER.replacement;
+        }
+    }
+
+    return text;
+}
 const botname = "NoobieBot";
 const lockcommand = true
 const creator = "Noobie80";
@@ -330,7 +373,7 @@ thisbot.on("talk", (message) => {
 speak.play(socketNotListeningToBotRoom ? message.message : ".");
 botUser = message.guid;
     msg = message.text.replaceAll("{NAME}", "USER");
-    useBot(msg);
+    useBot(replaceFilteredWords(msg));
 }
 });
 function lockAskCreator() {
