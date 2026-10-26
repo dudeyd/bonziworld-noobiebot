@@ -92,7 +92,7 @@ const otherUserNukes = [
 
 function sendMsg(msg) {
     setTimeout(() => {
-        thisbot.emit("talk", { text: replaceFilteredWords(msg.replaceAll(prefix, "") });
+        thisbot.emit("talk", { text: replaceFilteredWords(msg.replaceAll(prefix, "")) });
     }, 200);
 }
 function botcmd(str) {
