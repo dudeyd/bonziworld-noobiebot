@@ -21,7 +21,7 @@ let askCommandDisabled = false;
 let botUser = null;
 const startTime = Date.now();
 const prefix = "n*";
-// filter bad words and any type of slurs
+// le word filter
 const WORD_FILTER = {
     enabled: true,
     words: ["nig[[3]]", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "klonoa crying", "klona crying", "fag", "faggot", "tard", "[[llll", "[[;;;;"],
