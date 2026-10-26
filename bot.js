@@ -95,7 +95,7 @@ function useBot(text) {
     if (text.startsWith(prefix + "resethat")) return botcmd(`hat headphones`);
    if (text === prefix + "restore") {
         botcmd(`color green`);
-        botcmd(`hat headphones${usersPublic.get(botGUID).runlevel > 0 ? " dank scarf" : ""}`);
+        botcmd(`hat headphones${botSees.get(botGUID).runlevel > 0 ? " dank scarf" : ""}`);
         botcmd(`name ${botname} (${prefix}help)`);
     }
 
@@ -188,8 +188,8 @@ if (text.startsWith(prefix + "asknoobie")) {
             sendMsg("-waiting for noobie/bot host");
 setTimeout(() => {
             const que = text.substring(prefix.length + 10);
-            const ans = prompt(`${usersPublic.get(userAskingYou).name}: ${que}`);
-            botreply(ans, usersPublic.get(userAskingYou).name, que);
+            const ans = prompt(`${botSees.get(userAskingYou).name}: ${que}`);
+            botreply(ans, botSees.get(userAskingYou).name, que);
             thisbot.emit("typing", 0);
 }, 1000);
         }
@@ -238,13 +238,10 @@ if (text.startsWith(prefix + "asshole")) {
         }
     }
 if (text.startsWith(prefix + "myinfo")) {
-        sendMsg(`**^^Your info^^**\\n**ID:** ${botUser}\\n**APPEARANCE: **${usersPublic.get(botUser)?.color} gorilla\\n**PITCH: **${usersPublic.get(botUser)?.pitch}\\n**SPEED: **${usersPublic.get(botUser)?.speed}`);
-    }
-if (text.startsWith(prefix + "roominfo")) {
-        sendMsg(`**^^Room info^^**\\n**ID:** ${roomData.id}\\n**USERS ONLINE: **${roomData.playersOnline}`);
-    }
+        sendMsg(`**^^Your info^^**\\n**ID:** ${botUser}\\n**APPEARANCE: **${botSees.get(botUser)?.color} gorilla\\n**PITCH: **${botSees.get(botUser)?.pitch}\\n**SPEED: **${botSees.get(botUser)?.speed}`);
+}
 if (text.startsWith(prefix + "hostinfo")) {
-        sendMsg(`**^^Host info^^**\\n**Host ID:** ${!me || me || "none"}\\n**Name: **${!me || usersPublic.get(me).name || login_name.value}`);
+        sendMsg(`**^^Host info^^**\\n**Host ID:** ${!me || me || "none"}\\n**Name: **${!me || botSees.get(me).name || login_name.value}`);
     }
 if (text.startsWith(prefix + "cr6")) {
         sendMsg("^^**cr6**^^");
@@ -368,8 +365,6 @@ quotes.push({"guid": data.guid, "text": data.text, "time": Date(Date.now()).toSt
 thisbot.on("disconnect", () => {
 speak.play("NoobieBot disconnected");
 });
-thisbot.on("update", () => {roomData = {id: roomid, playersOnline: usersPublic.size}});
-thisbot.on("updateAll", () => {roomData = {id: roomid, playersOnline: usersPublic.size}});
 thisbot.on("connect", (data) => {thisbot.emit("login", {name: `${botname} (${prefix}help)`,room: login_room.value,})})
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 thisbot.on("blessed", botBlessedAvatar);
