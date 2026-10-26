@@ -24,7 +24,7 @@ const prefix = "n*";
 // filter bad words and any type of slurs
 const WORD_FILTER = {
     enabled: true,
-    words: ["nig[[3]]", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype"],
+    words: ["nig[[3]]", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "klonoa crying", "klona crying", "fag", "faggot", "tard", "[[llll", "[[;;;;"],
     replacement: "That word is blocked!"
 };
 function replaceFilteredWords(text) {
