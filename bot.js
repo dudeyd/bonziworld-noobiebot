@@ -365,7 +365,7 @@ thisbot.on("talk", (message) => {
     speak.play(socketNotListeningToBotRoom || message.message || ".")
     botUser = message.guid;
     msg = message.text.replaceAll("{NAME}", "USER");
-    useBot(msg.replace(`${botname.toLowerCase()} `, prefix))
+    useBot(replaceFilteredWords(msg));
    }
    catch(err) {
     sendMsg(`Error: ${err}`);
