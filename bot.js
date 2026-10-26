@@ -374,7 +374,7 @@ joined = true;
 botGUID = data.you;
 socket.connect();
 botcmd("swag");
-setTimeout(() => {useBot(`${prefix}restore`)}, 1000);
+setTimeout(() => {useBot(`${prefix}restore`)}, 750);
 roomid = data.room;
 } catch(error) { Dialog.alert(`${error}`) }
 });
