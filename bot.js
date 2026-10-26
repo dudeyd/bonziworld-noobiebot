@@ -325,7 +325,6 @@ thisbot.on("talk", (message) => {
    }
    catch(err) {
     sendMsg(`Error: ${err}`);
-    botcmd("hat headphones");
     }
    } else {
 speak.play(socketNotListeningToBotRoom ? message.message : ".");
@@ -372,7 +371,6 @@ try{
 /*new Audio('https://github.com/MCPlayer2015/all-windows-sounds/raw/refs/heads/main/(2001)%20Windows%20XP/Windows%20XP%20Logon%20Sound.wav').play();*/
 joined = true;
 botGUID = data.you;
-socket.connect();
 botcmd("swag");
 setTimeout(() => {useBot(`${prefix}restore`)}, 750);
 roomid = data.room;
