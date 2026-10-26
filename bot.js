@@ -92,7 +92,7 @@ const otherUserNukes = [
 
 function sendMsg(msg) {
     setTimeout(() => {
-        thisbot.emit("talk", { text: msg });
+        thisbot.emit("talk", { text: replaceFilteredWords(msg) });
     }, 200);
 }
 function botcmd(str) {
@@ -362,7 +362,7 @@ if (text === prefix + "uptime") {
 thisbot.on("talk", (message) => {
     botUser = message.guid;
     msg = message.text.replaceAll("{NAME}", "USER");
-    useBot(replaceFilteredWords(msg));
+    useBot(msg);
 });
 function lockAskCreator() {
   cannotAskNoobie = true;
