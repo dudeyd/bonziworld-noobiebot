@@ -72,6 +72,9 @@ function botreply(reply, user, usertext) {thisbot.emit("talk", {
 
 function useBot(text) {
     if (text === prefix + "template") {/*placeholder*/}
+    if (text === prefix + "update") {
+		if(botUser !== hostID) return
+		thisbot.destroy();							}
     if (text === prefix + "links") {sendMsg("-dudeyd.github.io/bonziworld-noobiebot/links/")}
 	if (text === prefix + "disableorenable") {if(botUser === hostID){lockcmd = !lockcmd}}
     if (text === prefix + "help 1") return sendMsg(help);
