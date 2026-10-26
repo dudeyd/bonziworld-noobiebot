@@ -121,6 +121,7 @@ function botreply(reply, user, usertext) {thisbot.emit("talk", {
 
 function useBot(text) {
     if (text === prefix + "template") {/*placeholder*/}
+    if (text === prefix + "test") {sendMsg("noobiebot is responding")}
     if (text === prefix + "update") {
 		if(botUser !== hostID) return
 		thisbot.destroy();							}
