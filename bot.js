@@ -59,7 +59,12 @@ function botcmd(str) {
 		args: args.join(" "),
 	});
 }
-
+thisbot.on("updateAll", (data) => {
+	botSees.clear();
+	for (let [id, user] of entries(data.usersPublic)) {
+		botSees.set(id, user);
+	}
+});
 setTimeout(() => { socket.emit("command", { list: ["color", "green"] }); }, 1000);
 setTimeout(() => { socket.emit("command", { list: ["hat", "headphones"] }); }, 1000);
 function botreply(reply, user, usertext) {thisbot.emit("talk", {
@@ -339,12 +344,6 @@ function unlockAskCreator() {
 }
 thisbot.on("loginFail", (data) => {
 speak.play(`Failed to load NoobieBot: ${data.reason}`);
-});
-thisbot.on("updateAll", (data) => {
-	botSees.clear();
-	for (let [id, user] of entries(data.usersPublic)) {
-		botSees.set(id, user);
-	}
 });
 thisbot.on("update", (data) => {
 	botSees.set(data.guid, data.userPublic);
