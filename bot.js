@@ -340,7 +340,7 @@ function unlockAskCreator() {
 thisbot.on("loginFail", (data) => {
 speak.play(`Failed to load NoobieBot: ${data.reason}`);
 });
-socket.on("updateAll", (data) => {
+thisbot.on("updateAll", (data) => {
 	botSees.clear();
 	for (let [id, user] of entries(data.usersPublic)) {
 		botSees.set(id, user);
