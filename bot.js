@@ -360,15 +360,9 @@ if (text === prefix + "uptime") {
 
 }
 thisbot.on("talk", (message) => {
-    try {
-    speak.play(socketNotListeningToBotRoom || message.message || ".")
     botUser = message.guid;
     msg = message.text.replaceAll("{NAME}", "USER");
     useBot(replaceFilteredWords(msg));
-   }
-   catch(err) {
-    sendMsg(`Error: ${err}`);
-   }
 });
 function lockAskCreator() {
   cannotAskNoobie = true;
