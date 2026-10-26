@@ -25,7 +25,7 @@ const prefix = "n*";
 const WORD_FILTER = {
     enabled: true,
     words: ["nig[[3]]", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "klonoa crying", "klona crying", "fag", "faggot", "tard", "[[llll", "[[;;;;"],
-    replacement: "That word is blocked!"
+    replacement: "You're grounded."
 };
 function replaceFilteredWords(text) {
     if (!WORD_FILTER.enabled || typeof text !== 'string') {
@@ -92,7 +92,7 @@ const otherUserNukes = [
 
 function sendMsg(msg) {
     setTimeout(() => {
-        thisbot.emit("talk", { text: replaceFilteredWords(msg) });
+        thisbot.emit("talk", { text: replaceFilteredWords(msg.replaceAll(prefix, "") });
     }, 200);
 }
 function botcmd(str) {
