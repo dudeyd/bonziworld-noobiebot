@@ -360,7 +360,6 @@ if (text === prefix + "uptime") {
 
 }
 thisbot.on("talk", (message) => {
-    if (showErrorInChat === true){
     try {
     speak.play(socketNotListeningToBotRoom || message.message || ".")
     botUser = message.guid;
@@ -369,13 +368,7 @@ thisbot.on("talk", (message) => {
    }
    catch(err) {
     sendMsg(`Error: ${err}`);
-    }
-   } else {
-speak.play(socketNotListeningToBotRoom ? message.message : ".");
-botUser = message.guid;
-    msg = message.text.replaceAll("{NAME}", "USER");
-    useBot(replaceFilteredWords(msg));
-}
+   }
 });
 function lockAskCreator() {
   cannotAskNoobie = true;
