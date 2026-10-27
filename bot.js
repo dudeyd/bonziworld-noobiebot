@@ -259,7 +259,7 @@ if (text.startsWith(prefix + "room")) {
         setTimeout(() => {
         socket.connect();
         thisbot.connect();
-        thisbot.emit("login", {name: `${botname} (${prefix}help)`,room: text.substring(prefix.length + 5),});
+        thisbot.emit("login", {name: lebot.name + "(" + prefix + "help" + ")",room: text.substring(prefix.length + 5),});
 socket.emit("login", {name: login_name.value,room: text.substring(prefix.length + 5),});
 }, 400);
         }
