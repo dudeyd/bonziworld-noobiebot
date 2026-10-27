@@ -126,7 +126,7 @@ function useBot(text) {
     if (text === prefix + "links") {sendMsg("-dudeyd.github.io/bonziworld-noobiebot/links/")}
 	if (text === prefix + "disableorenable") {if(botUser === hostID){lockcmd = !lockcmd}}
     if (text === prefix + "help 1") return sendMsg(help);
-    if (text === prefix + "help") return sendMsg(`-%%^^$r$${botname} Help Command Pages$r$^^%% ${prefix}help 1\\n ${prefix}help 2`);
+    if (text === prefix + "help") return sendMsg(`-%%^^$r$${lebot.name} Help Command Pages$r$^^%% ${prefix}help 1\\n ${prefix}help 2`);
     if (text === prefix + "help 2") return sendMsg(help2);
     if (text === prefix + "joke") return botcmd(`joke`);
     if (text === prefix + "/j") return botcmd(`joke`);
@@ -143,7 +143,7 @@ function useBot(text) {
    if (text === prefix + "restore") {
         botcmd(`color green`);
         botcmd(`hat headphones${botSees.get(lebot.guid).runlevel > 0 ? " dank scarf" : ""}`);
-        botcmd(`name ${botname} (${prefix}help)`);
+        botcmd(`name ${lebot.name} (${prefix}help)`);
     }
 
     if (text.startsWith(prefix + "roast")) {
