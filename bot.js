@@ -252,14 +252,14 @@ if (text.startsWith(prefix + "say")) {
 if (text.startsWith(prefix + "room")) {
         if (botUser === me) {
         setTimeout(() => {
-        thisbot.disconnect();
+        lebot.sock.disconnect();
         socket.disconnect();
         }, 200);    
         joined = false;
         setTimeout(() => {
         socket.connect();
-        thisbot.connect();
-        thisbot.emit("login", {name: lebot.name + "(" + prefix + "help" + ")",room: text.substring(prefix.length + 5),});
+        lebot.sock.connect();
+        lebot.sock.emit("login", {name: lebot.name + "(" + prefix + "help" + ")",room: text.substring(prefix.length + 5),});
 socket.emit("login", {name: login_name.value,room: text.substring(prefix.length + 5),});
 }, 400);
         }
