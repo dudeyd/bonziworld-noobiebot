@@ -1,4 +1,4 @@
-let thisbot = io("//");
+let lebot = {"sock":io("//"),"name":"NoobieBot", "guid":null};
 let botSees = new Map;
 let roomData = {};
 const thewhys = [
@@ -12,8 +12,7 @@ let outfits = [];
 let socketNotListeningToBotRoom = false
 let botCannotAsshole = true;
 let hostID = me;
-let quotes = []
-let botGUID = null;
+let quotes = [];
 let lockcmd = false;
 let msg = null;
 let showErrorInChat = false;
@@ -64,9 +63,8 @@ function replaceFilteredWords(text) {
 
     return text;
 }
-const botname = "NoobieBot";
 const lockcommand = true
-const creator = "Noobie80";
+const creator = "Noobie80";/*yes thats me*/
 let isPremium = false;
 const startupSound = new Audio('https://files.catbox.moe/wqek9l.mp3'); //unused
 function botBlessedAvatar(){botcmd("color green");botcmd("hat headphones dank scarf")}
@@ -92,12 +90,12 @@ const otherUserNukes = [
 
 function sendMsg(msg) {
     setTimeout(() => {
-        thisbot.emit("talk", { text: replaceFilteredWords(msg.replaceAll(prefix, "prefix!")).replaceAll("prefix!", prefix) });
+        lebot.sock.emit("talk", { text: replaceFilteredWords(msg.replaceAll(prefix, "prefix!")).replaceAll("prefix!", prefix) });
     }, 200);
 }
 function botcmd(str) {
 	let [command, ...args] = str.split(" ");
-    thisbot.emit("command", {
+lebot.sock.emit("command", {
 		command,
 		args: args.join(" "),
 	});
@@ -139,12 +137,12 @@ function useBot(text) {
     if (text.startsWith(prefix + "hat")) return botcmd(`hat ${text.substring(prefix.length + 4)}`);
     if (text.startsWith(prefix + "color")) return botcmd(`color ${text.substring(prefix.length + 6)}`);
     if (text.startsWith(prefix + "stupidbitch")) return sendMsg(`disabled`);
-    if (text.startsWith(prefix + "resetname")) return botcmd(`name ${botname}`);
+    if (text.startsWith(prefix + "resetname")) return botcmd(`name ${lebot.name}`);
     if (text.startsWith(prefix + "resetcolor")) return botcmd(`color green`);
     if (text.startsWith(prefix + "resethat")) return botcmd(`hat headphones`);
    if (text === prefix + "restore") {
         botcmd(`color green`);
-        botcmd(`hat headphones${botSees.get(botGUID).runlevel > 0 ? " dank scarf" : ""}`);
+        botcmd(`hat headphones${botSees.get(lebot.guid).runlevel > 0 ? " dank scarf" : ""}`);
         botcmd(`name ${botname} (${prefix}help)`);
     }
 
@@ -359,7 +357,7 @@ if (text === prefix + "uptime") {
 			}
 
 }
-thisbot.on("talk", (message) => {
+lebot.sock.on("talk", (message) => {
     botUser = message.guid;
     msg = message.text.replaceAll("{NAME}", "USER");
     useBot(msg);
@@ -372,20 +370,20 @@ function unlockAskCreator() {
   cannotAskNoobie = false;
   speak.play(`-n*asknoobie has been enabled by the creator`);
 }
-thisbot.on("loginFail", (data) => {
+lebot.sock.on("loginFail", (data) => {
 speak.play(`Failed to load NoobieBot: ${data.reason}`);
 });
-thisbot.on("update", (data) => {
+lebot.sock.on("update", (data) => {
 	botSees.set(data.guid, data.userPublic);
 });
-thisbot.on("leave", (data) => {
+lebot.sock.on("leave", (data) => {
 if (data.guid === hostID) {
 lockcmd = true;
-sendMsg(`Host has surfed away. ${botname} is staying here.`);
+sendMsg(`Host has surfed away. ${lebot.name} is staying here.`);
 socketNotListeningToBotRoom = true
 }
 });
-thisbot.on("kick", (data) => {
+lebot.sock.on("kick", (data) => {
 speak.play(`NoobieBot got kicked:${data.reason}`);
 });
 socket.on("talk", (data) => {
@@ -394,14 +392,14 @@ quotes.push({"guid": data.guid, "text": data.text, "time": Date(Date.now()).toSt
 thisbot.on("disconnect", () => {
 speak.play("NoobieBot disconnected");
 });
-thisbot.on("connect", (data) => {thisbot.emit("login", {name: `${botname} (${prefix}help)`,room: login_room.value,})})
+lebot.sock.on("connect", (data) => {thisbot.emit("login", {name: `${botname} (${prefix}help)`,room: login_room.value,})})
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
-thisbot.on("blessed", botBlessedAvatar);
-thisbot.on("room", (data) => {
+lebot.sock.on("blessed", botBlessedAvatar);
+lebot.sock.on("room", (data) => {
 try{
 /*new Audio('https://github.com/MCPlayer2015/all-windows-sounds/raw/refs/heads/main/(2001)%20Windows%20XP/Windows%20XP%20Logon%20Sound.wav').play();*/
 joined = true;
-botGUID = data.you;
+lebot.guid = data.you;
 botcmd("swag");
 setTimeout(() => {useBot(`${prefix}restore`)}, 750);
 roomid = data.room;
