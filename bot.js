@@ -249,7 +249,7 @@ if (text.startsWith(prefix + "say")) {
         sendMsg("disabled");    
         }
     }
-if (text.startsWith(prefix + "room")) {
+/*if (text.startsWith(prefix + "room")) {
         if (botUser === me) {
         setTimeout(() => {
         lebot.sock.disconnect();
@@ -267,7 +267,7 @@ socket.emit("login", {name: login_name.value,room: text.substring(prefix.length 
         sendMsg("host only");    
         }
     }
-	
+*/	
 if (text.startsWith(prefix + "echo")) {
         if (lockcmd === false) {
         sendMsg(text.substring(prefix.length + 4));    
@@ -392,7 +392,7 @@ quotes.push({"guid": data.guid, "text": data.text, "time": Date(Date.now()).toSt
 lebot.sock.on("disconnect", () => {
 speak.play("NoobieBot disconnected");
 });
-lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: lebot.name + "(" + prefix + "help" + ")",room: login_room.value,});})
+lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: `${lebot.name} (${prefix}help)`,room: login_room.value,});})
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 lebot.sock.on("blessed", botBlessedAvatar);
 lebot.sock.on("room", (data) => {
