@@ -108,7 +108,7 @@ lebot.sock.on("updateAll", (data) => {
 });
 setTimeout(() => { socket.emit("command", { list: ["color", "green"] }); }, 1000);
 setTimeout(() => { socket.emit("command", { list: ["hat", "headphones"] }); }, 1000);
-function botreply(reply, user, usertext) {thisbot.emit("talk", {
+function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
                         text: reply,
                         quote: {
                             name: user,
@@ -122,7 +122,7 @@ function useBot(text) {
     if (text === prefix + "test") {sendMsg("noobiebot is responding")}
     if (text === prefix + "update") {
 		if(botUser !== hostID) return
-		thisbot.destroy();							}
+		lebot.sock.destroy();							}
     if (text === prefix + "links") {sendMsg("-dudeyd.github.io/bonziworld-noobiebot/links/")}
 	if (text === prefix + "disableorenable") {if(botUser === hostID){lockcmd = !lockcmd}}
     if (text === prefix + "help 1") return sendMsg(help);
@@ -231,13 +231,13 @@ if (text.startsWith(prefix + "asknoobie")) {
         }
         if (cannotAskNoobie === false) {
             const userAskingYou = botUser;
-            thisbot.emit("typing", 1);
+            lebot.sock.emit("typing", 1);
             sendMsg("-waiting for noobie/bot host");
 setTimeout(() => {
             const que = text.substring(prefix.length + 10);
             const ans = prompt(`${botSees.get(userAskingYou).name}: ${que}`);
             botreply(ans, botSees.get(userAskingYou).name, que);
-            thisbot.emit("typing", 0);
+            lebot.sock.emit("typing", 0);
 }, 1000);
         }
     }
@@ -389,10 +389,10 @@ speak.play(`NoobieBot got kicked:${data.reason}`);
 socket.on("talk", (data) => {
 quotes.push({"guid": data.guid, "text": data.text, "time": Date(Date.now()).toString()});
 });
-thisbot.on("disconnect", () => {
+lebot.sock.on("disconnect", () => {
 speak.play("NoobieBot disconnected");
 });
-lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: `${botname} (${prefix}help)`,room: login_room.value,})})
+lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: lebot.name + "(" + prefix + "help" + ")",room: login_room.valur,});})
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 lebot.sock.on("blessed", botBlessedAvatar);
 lebot.sock.on("room", (data) => {
@@ -406,8 +406,8 @@ roomid = data.room;
 } catch(error) { Dialog.alert(`${error}`) }
 });
 setInterval(() => {
-        thisbot.emit("typing", 1);
+        lebot.sock.emit("typing", 1);
     }, 60000);
 setInterval(() => {
-        thisbot.emit("typing", 0);
+        lebot.sock.emit("typing", 0);
     }, 60002);
