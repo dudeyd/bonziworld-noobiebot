@@ -100,7 +100,7 @@ lebot.sock.emit("command", {
 		args: args.join(" "),
 	});
 }
-thisbot.on("updateAll", (data) => {
+lebot.sock.on("updateAll", (data) => {
 	botSees.clear();
 	for (let [id, user] of entries(data.usersPublic)) {
 		botSees.set(id, user);
