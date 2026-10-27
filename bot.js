@@ -392,7 +392,7 @@ quotes.push({"guid": data.guid, "text": data.text, "time": Date(Date.now()).toSt
 thisbot.on("disconnect", () => {
 speak.play("NoobieBot disconnected");
 });
-lebot.sock.on("connect", (data) => {thisbot.emit("login", {name: `${botname} (${prefix}help)`,room: login_room.value,})})
+lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: `${botname} (${prefix}help)`,room: login_room.value,})})
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 lebot.sock.on("blessed", botBlessedAvatar);
 lebot.sock.on("room", (data) => {
