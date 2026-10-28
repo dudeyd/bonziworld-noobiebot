@@ -76,13 +76,13 @@ const help2 = `- ^^%%$r$${lebot.name} Commands 2/2$r$%%^^ \\n` +
 `**--${prefix}stupidbitch (name)--\\n ${prefix}gibberish\\n ${prefix}stfu (name)\\n ${prefix}fuk (name)\\n ${prefix}asknoobie (question)\\n ${prefix}myinfo\\n ${prefix}uptime\\n ${prefix}hostinfo\\n${prefix}why\\n ${prefix}randomquote`;
 const pages = ["fun", "system", "insult", "misc"];
 const fun = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
-`**${prefix}echo\\n ${prefix}say\\n ${prefix}fact\\n ${prefix}joke\\n ${prefix}france\\n ${prefix}color\\n ${prefix}hat\\n ${prefix}name\\n ${prefix}restore**`;
+`**${prefix}echo\\n ${prefix}say\\n ${prefix}fact\\n ${prefix}joke\\n ${prefix}france\\n ${prefix}color\\n ${prefix}hat\\n ${prefix}name\\n ${prefix}restore\\n${prefix}sticker (name)**`;
 const insult = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 `**${prefix}stfu\\n ${prefix}asshole\\n ${prefix}stfu\\n ${prefix}roast**`;
 const system = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
-`**${prefix}links\\n ${prefix}changelog\\n ${prefix}about\\n ${prefix}uptime\\n ${prefix}hostinfo\\n ${prefix}myinfo**`;
+`**${prefix}links\\n ${prefix}about\\n ${prefix}uptime\\n ${prefix}hostinfo\\n ${prefix}myinfo**`;
 const misc = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
-`**${prefix}aplle\\n ${prefix}ask**`;
+`**${prefix}asknoobie**`;
 /*const nukelines = [
             `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`,
             `I JUST DID A BOOM BOOM!`,
@@ -183,8 +183,8 @@ if (!usersPublic.get(quote.guid).name) return useBot(`${prefix}randomquote`);
         return sendMsg(`disabled`);
     }
 
-        if (text === prefix + "aplle") {
-        return sendMsg("aplle. aplle pie. aplle bottle. aplle everything.");
+        if (text === prefix + "sticker") {
+        return botcmd(`sticker ${text.substring(8)}`);
     }
     if (text === prefix + "llama") {
         botcmd(`img https://files.catbox.moe/qkbzrk.jpeg`);
