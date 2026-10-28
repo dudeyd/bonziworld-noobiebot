@@ -147,7 +147,7 @@ function useBot(text) {
     if (text.startsWith(prefix + "why")) return sendMsg(thewhys[Math.floor(Math.random() * thewhys.length)]);
     if (text === prefix + "france") return botcmd(`france`);
     if (text.startsWith(prefix + "hat")) return botcmd(`hat ${text.substring(prefix.length + 4)}`);
-    if (text.startsWith(prefix + "sticker")) return botcmd(`sticker ${text.substring(prefix.length + 8)}`);
+    if (text.startsWith(prefix + "sticker")) return botcmd(`sticker${text.substring(prefix.length + 7)}`);
 	if (text.startsWith(prefix + "color")) return botcmd(`color ${text.substring(prefix.length + 6)}`);
     if (text.startsWith(prefix + "stupidbitch")) return sendMsg(`disabled`);
     if (text.startsWith(prefix + "resetname")) return botcmd(`name ${lebot.name}`);
