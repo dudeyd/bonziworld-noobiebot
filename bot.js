@@ -184,7 +184,7 @@ if (!usersPublic.get(quote.guid).name) return useBot(`${prefix}randomquote`);
     }
 
         if (text === prefix + "sticker") {
-        return botcmd(`sticker ${text.substring(8)}`);
+        return botcmd(`sticker ${text.substring(7)}`);
     }
     if (text === prefix + "llama") {
         botcmd(`img https://files.catbox.moe/qkbzrk.jpeg`);
