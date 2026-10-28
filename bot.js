@@ -80,7 +80,7 @@ const fun = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 const insult = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 `**${prefix}stfu\\n ${prefix}asshole\\n ${prefix}stfu\\n ${prefix}roast**`;
 const system = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
-`**${prefix}links\\n ${prefix}about\\n ${prefix}uptime\\n ${prefix}hostinfo\\n ${prefix}myinfo**`;
+`**${prefix}links\\n ${prefix}uptime\\n ${prefix}hostinfo\\n ${prefix}myinfo**`;
 const misc = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 `**${prefix}asknoobie**`;
 /*const nukelines = [
