@@ -75,7 +75,7 @@ const help = `- ^^%%$r$${lebot.name} Commands 1/2$r$%%^^ \n` +
 const help2 = `- ^^%%$r$${lebot.name} Commands 2/2$r$%%^^ \\n` +
 `**--${prefix}stupidbitch (name)--\\n ${prefix}gibberish\\n ${prefix}stfu (name)\\n ${prefix}fuk (name)\\n ${prefix}asknoobie (question)\\n ${prefix}myinfo\\n ${prefix}uptime\\n ${prefix}hostinfo\\n${prefix}why\\n ${prefix}randomquote`;
 const pages = ["fun", "system", "insult", "misc"];
-const fun = `- ^^%%$r$${botname} commands$r$%%^^ \n` +
+const fun = `- ^^%%$r$${lebot.name} commands$r$%%^^ \n` +
 `**${prefix}echo\\n ${prefix}say\\n ${prefix}fact\\n ${prefix}joke\\n ${prefix}france\\n ${prefix}color\\n ${prefix}hat\\n ${prefix}name\\n ${prefix}restore**`;
 const insult = `- ^^%%$r$${lebot.name} commands$r$%%^^ \n` +
 `**${prefix}stfu\\n ${prefix}asshole\\n ${prefix}stfu\\n ${prefix}roast**`;
@@ -221,19 +221,6 @@ if (text === prefix + "camel") {
         return sendMsg(gokid);
         }
     }*/
-    if (text.startsWith(prefix + "pp")) {
-    const name = text.substring(prefix.length + 2);
-    const pps = [
-            `This is ${name}'s PP: 8=Đ`,
-            `This is ${name}'s PP: 8==Đ`,
-            `This is ${name}'s PP: 8===Đ`,
-            `This is ${name}'s PP: 8====Đ`,
-            `This is ${name}'s PP: 8=====Đ`,
-            `This is ${name}'s PP: 8======Đ`
-        ];
-        const pp = pps[Math.floor(Math.random() * pps.length)];
-        return sendMsg("disabled");
-     }
 if (text.startsWith(prefix + "asknoobie")) {
         if (cannotAskNoobie === true) {
             sendMsg("")
