@@ -162,14 +162,14 @@ function useBot(text) {
         const user = text.substring(prefix.length + 6);
         if (!user) return sendMsg(" ");
         const roasts = [
-            `${user}, I'd agree with you, but then we'd both be wrong.`,
-            `${user}, if laughter is the best medicine, your face must cure the world.`,
-            `${user}, you bring everyone so much joy... when you leave the room.`,
-            `${user}, you're proof evolution can go in reverse.`,
-            `${user}, if I wanted to kill myself, I'd climb your ego and jump to your IQ.`
+        `${user}, I'd agree with you, but then we'd both be wrong.`,
+        `${user}, if ugly was a day, you'd be an entire year.`,
+        `${user}, you bring everyone so much joy... when you leave the room.`,
+        `${user}, you're proof evolution can go in reverse.`,
+        `${user}, your ego and your IQ seem to be competing.`
         ];
         const roast = roasts[Math.floor(Math.random() * roasts.length)];
-        return sendMsg(`disabled`);
+        return sendMsg(roast);
     }
     if (text.startsWith(prefix + "randomquote")) {
         const quote = quotes[Math.floor(Math.random() * quotes.length)];
