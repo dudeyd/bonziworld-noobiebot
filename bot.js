@@ -75,13 +75,13 @@ const help = `- ^^%%$r$${lebot.name} Commands 1/2$r$%%^^ \n` +
 const help2 = `- ^^%%$r$${lebot.name} Commands 2/2$r$%%^^ \\n` +
 `**--${prefix}stupidbitch (name)--\\n ${prefix}gibberish\\n ${prefix}stfu (name)\\n ${prefix}fuk (name)\\n ${prefix}asknoobie (question)\\n ${prefix}myinfo\\n ${prefix}uptime\\n ${prefix}hostinfo\\n${prefix}why\\n ${prefix}randomquote`;
 const pages = ["fun", "system", "insult", "misc"];
-const fun = `- ^^%%$r$${lebot.name} commands$r$%%^^ \n` +
+const fun = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 `**${prefix}echo\\n ${prefix}say\\n ${prefix}fact\\n ${prefix}joke\\n ${prefix}france\\n ${prefix}color\\n ${prefix}hat\\n ${prefix}name\\n ${prefix}restore**`;
-const insult = `- ^^%%$r$${lebot.name} commands$r$%%^^ \n` +
+const insult = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 `**${prefix}stfu\\n ${prefix}asshole\\n ${prefix}stfu\\n ${prefix}roast**`;
-const system = `- ^^%%$r$${lebot.name} commands$r$%%^^ \n` +
+const system = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 `**${prefix}links\\n ${prefix}changelog\\n ${prefix}about\\n ${prefix}uptime\\n ${prefix}hostinfo\\n ${prefix}myinfo**`;
-const misc = `- ^^%%$r$${lebot.name} commands$r$%%^^ \n` +
+const misc = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 `**${prefix}aplle\\n ${prefix}ask**`;
 /*const nukelines = [
             `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`,
@@ -135,8 +135,11 @@ function useBot(text) {
     if (text === prefix + "links") {sendMsg("-dudeyd.github.io/bonziworld-noobiebot/links/")}
 	if (text === prefix + "disableorenable") {if(botUser === hostID){lockcmd = !lockcmd}}
     if (text === prefix + "help 1") return sendMsg(help);
-    if (text === prefix + "help") return sendMsg(`-%%^^$r$${lebot.name} Help Command Pages$r$^^%% ${prefix}help 1\\n ${prefix}help 2`);
-    if (text === prefix + "help 2") return sendMsg(help2);
+    if (text === prefix + "help") return sendMsg(`-%%^^$r$${lebot.name} Help Command Categories$r$^^%% ${prefix}help misc\\n ${prefix}help system\\n ${prefix}help insult\\n ${prefix}help fun`);    if (text === prefix + "help 2") return sendMsg(help2);
+	if (text === prefix + "help system") return sendMsg(system);
+    if (text === prefix + "help fun") return sendMsg(fun);
+    if (text === prefix + "help insult") return sendMsg(insult);
+    if (text === prefix + "help misc") return sendMsg(misc);
     if (text === prefix + "joke") return botcmd(`joke`);
     if (text === prefix + "/j") return botcmd(`joke`);
     if (text === prefix + "bonzipasta") return botcmd(`triggered`);
