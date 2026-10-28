@@ -135,6 +135,7 @@ function useBot(text) {
     if (text === prefix + "links") {sendMsg("-dudeyd.github.io/bonziworld-noobiebot/links/")}
 	if (text === prefix + "disableorenable") {if(botUser === hostID){lockcmd = !lockcmd}}
     if (text === prefix + "help 1") return sendMsg(help);
+	if (text === prefix + "mario") return sendMsg(text.substring(prefix.length + 5) + "\\n" + "▒▒▒▒▒▒▒▒▒▄▄▄▄▒▒▒▒▒▒▒ ▒▒▒▒▒▒▄▀▀▓▓▓▀█▒▒▒▒▒▒ ▒▒▒▒▄▀▓▓▄██████▄▒▒▒▒ ▒▒▒▄█▄█▀░░▄░▄░█▀▒▒▒▒ ▒▒▄▀░██▄░░▀░▀░▀▄▒▒▒▒ ▒▒▀▄░░▀░▄█▄▄░░▄█▄▒▒▒ ▒▒▒▒▀█▄▄░░▀▀▀█▀▒▒▒▒▒ ▒▒▒▄▀▓▓▓▀██▀▀█▄▀▀▄▒▒ ▒▒█▓▓▄▀▀▀▄█▄▓▓▀█░█▒▒ ▒▒▀▄█░░░░░█▀▀▄▄▀█▒▒▒ ▒▒▒▄▀▀▄▄▄██▄▄█▀▓▓█▒▒ ▒▒█▀▓█████████▓▓▓█▒▒ ▒▒█▓▓██▀▀▀▒▒▒▀▄▄█▀▒▒ ▒▒▒▀▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
     if (text === prefix + "help") return sendMsg(`-%%^^$r$${lebot.name} Help Command Categories$r$^^%% ${prefix}help misc\\n ${prefix}help system\\n ${prefix}help insult\\n ${prefix}help fun`);    if (text === prefix + "help 2") return sendMsg(help2);
 	if (text === prefix + "help system") return sendMsg(system);
     if (text === prefix + "help fun") return sendMsg(fun);
