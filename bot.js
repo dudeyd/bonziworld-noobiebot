@@ -279,7 +279,7 @@ if (text.startsWith(prefix + "asshole")) {
         if (lockcmd === true) {
             sendMsg("disabled")
         }
-        if (lockcmd === false) {
+        if (lockcmd !== true) {
             botcmd(`asshole ${text.substring(prefix.length + 7)}`);
         }
     }
