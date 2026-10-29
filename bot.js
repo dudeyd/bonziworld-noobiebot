@@ -395,6 +395,10 @@ lebot.sock.on("blessed", botBlessedAvatar);
 socket.on("fling", (data) => {
         sendMsg("Fling! That bonzi got thrown away!")
 });
+
+socket.on("nuke", (data) => {
+        sendMsg("Boom! That bonzi exploded!")
+});
 lebot.sock.on("room", (data) => {
 try{
 /*new Audio('https://github.com/MCPlayer2015/all-windows-sounds/raw/refs/heads/main/(2001)%20Windows%20XP/Windows%20XP%20Logon%20Sound.wav').play();*/
