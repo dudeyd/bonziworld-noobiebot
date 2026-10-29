@@ -400,7 +400,7 @@ try{
 /*new Audio('https://github.com/MCPlayer2015/all-windows-sounds/raw/refs/heads/main/(2001)%20Windows%20XP/Windows%20XP%20Logon%20Sound.wav').play();*/
 joined = true;
 lebot.guid = data.you;
-setTimeout(() => {useBot(`${prefix}restore`)}, 100);
+setTimeout(() => {useBot(`${prefix}restore`)}, 500);
 roomid = data.room;
 } catch(error) { Dialog.alert(`${error}`) }
 });
