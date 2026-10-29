@@ -392,6 +392,9 @@ speak.play("NoobieBot disconnected");
 lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: `${lebot.name} (${prefix}help)`,room: login_room.value,});})
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 lebot.sock.on("blessed", botBlessedAvatar);
+socket.on("fling", (data) => {
+        sendMsg("Fling! That bonzi got thrown away!")
+});
 lebot.sock.on("room", (data) => {
 try{
 /*new Audio('https://github.com/MCPlayer2015/all-windows-sounds/raw/refs/heads/main/(2001)%20Windows%20XP/Windows%20XP%20Logon%20Sound.wav').play();*/
