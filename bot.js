@@ -143,7 +143,7 @@ function useBot(text) {
     if (text === prefix + "help misc") return sendMsg(misc);
     if (text === prefix + "joke") return botcmd(`joke`);
     if (text === prefix + "/j") return botcmd(`joke`);
-    if (text === prefix + "bonzipasta") return botcmd(`triggered`);
+    /*if (text === prefix + "bonzipasta") return botcmd(`triggered`);*/
     if (text === prefix + "fact") return botcmd(`fact`);
     if (text.startsWith(prefix + "why")) return sendMsg(thewhys[Math.floor(Math.random() * thewhys.length)]);
     if (text === prefix + "france") return botcmd(`france`);
