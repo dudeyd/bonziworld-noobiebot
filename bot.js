@@ -24,7 +24,7 @@ const prefix = "n*";
 const WORD_FILTER = {
     enabled: true,
     words: ["nig[[3]]", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "klonoa crying", "klona crying", "fag", "faggot", "tard", "inflation", "gook", "uwu", "owo", "femboy"],
-    replacement: "blocked"
+    replacement: "filtered"
 };
 function replaceFilteredWords(text) {
     if (!WORD_FILTER.enabled || typeof text !== 'string') {
