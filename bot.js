@@ -395,7 +395,7 @@ lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: `${lebot.nam
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 lebot.sock.on("blessed", botBlessedAvatar);
 socket.on("fling", (data) => {
-        sendMsg("Fling! That bonzi got thrown away!")
+        sendMsg(`Fling! That ${botSees.get(data.guid).color} bonzi got thrown away!`)
 });
 
 socket.on("nuke", (data) => {
