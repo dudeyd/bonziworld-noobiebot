@@ -131,7 +131,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 }
 
 function useBot(text) {
-	if (kicks.includes(botUser))return botreply("you were removed from the bot", botSees.get(botUser).name, text);
+	if (kicks.includes(botUser)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
     if (text === prefix + "template") {/*placeholder*/}
 	if (text.startsWith(prefix + "kick ")){kicks.push(text.substring(prefix.length + 5))}
 	if (text === prefix + "test") {sendMsg("noobiebot is responding")}
