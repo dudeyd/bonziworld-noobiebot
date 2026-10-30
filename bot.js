@@ -131,7 +131,9 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 }
 
 function useBot(text) {
+	if (kicks.includes(botUser))return;
     if (text === prefix + "template") {/*placeholder*/}
+	if (text.startsWith(prefix + "kick ")){kicks.push(text.substring(prefix.length + 5))}
 	if (text === prefix + "test") {sendMsg("noobiebot is responding")}
     if (text === prefix + "update") {
 		if(botUser !== hostID) return
