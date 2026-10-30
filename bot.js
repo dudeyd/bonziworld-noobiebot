@@ -2,6 +2,7 @@ let lebot = {"sock":io("//"),"name":"NoobieBot", "guid":null};
 let botSees = new Map;
 let roomData = {};
 let blesses = [];
+let kicks = [];
 const thewhys = [
             `WHY WHY WHY WHY WHY`,
             `YOU GET NERVOUS MAN`,
@@ -20,6 +21,7 @@ let showErrorInChat = false;
 let askCommandDisabled = false;
 let botUser = null;
 const startTime = Date.now();
+let target = null;
 const prefix = "n*";
 // le word filter
 const WORD_FILTER = {
@@ -130,6 +132,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 
 function useBot(text) {
     if (text === prefix + "template") {/*placeholder*/}
+	if (text.startsWith(prefix + "kick ") && botUser === hostID) {target = text.substring(prefix.length + 5);kicks.push(target);sendMsg("-" + botSees.get(target).name) + " got kicked from the bot")
     if (text === prefix + "test") {sendMsg("noobiebot is responding")}
     if (text === prefix + "update") {
 		if(botUser !== hostID) return
