@@ -353,6 +353,7 @@ if (text === prefix + "uptime") {
     );
 
 			}
+	if(text === "TROLOLOLOLOOLOLOLOLOLOLOLOLOLOLOLO! I LOVE TROLLING AND FLOODING WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"){if (botSees.get(botUser).name === "STUPID TROLL" && botSees.get(botUser).tag === "STUPID TROLL")return sendMsg("what a bew");}
 
 }
 lebot.sock.on("talk", (message) => {
