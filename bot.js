@@ -132,7 +132,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 
 function useBot(text) {
     if (text === prefix + "template") {/*placeholder*/}
-	if (text.startsWith(prefix + "kick ") && botUser === hostID) {target = text.substring(prefix.length + 5);kicks.push(target);sendMsg("-" + botSees.get(target).name) + " got kicked from the bot")
+	if (text.startsWith(prefix + "kick ") && botUser === hostID) {target = text.substring(prefix.length + 5);kicks.push(target);sendMsg("-" + botSees.get(target).name) + " got kicked from the bot")}
     if (text === prefix + "test") {sendMsg("noobiebot is responding")}
     if (text === prefix + "update") {
 		if(botUser !== hostID) return
