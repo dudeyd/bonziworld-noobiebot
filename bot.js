@@ -408,12 +408,10 @@ socket.on("nuke", (data) => {
         sendMsg(`Boom! That ${botSees.get(data.guid).color} bonzi exploded!`)
 });
 lebot.sock.on("room", (data) => {
-try{
 joined = true;
 lebot.guid = data.you;
 setTimeout(() => {useBot(`${prefix}restore`)}, 500);
 roomid = data.room;
-} catch(error) { Dialog.alert(`${error}`) }
 });
 setInterval(() => {
         lebot.sock.emit("typing", 1);
