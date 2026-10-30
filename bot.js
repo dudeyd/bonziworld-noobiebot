@@ -399,7 +399,7 @@ socket.on("fling", (data) => {
 });
 
 socket.on("nuke", (data) => {
-        sendMsg("Boom! That bonzi exploded!")
+        sendMsg(`Boom! That ${botSees.get(data.guid).color} bonzi exploded!`)
 });
 lebot.sock.on("room", (data) => {
 try{
