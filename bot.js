@@ -410,7 +410,7 @@ socket.on("nuke", (data) => {
 	     setTimeout(() => {
   ncombo = 0
 }, 3000);
-	    ncombo = ncombo++;
+	    ncombo = ncombo + 1;
 	    if(ncombo === 1){
         sendMsg(`Boom! That ${botSees.get(data.guid).color} bonzi exploded!`)
 		}
