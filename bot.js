@@ -1,6 +1,7 @@
 let lebot = {"sock":io("//"),"name":"NoobieBot", "guid":null};
 let botSees = new Map;
 let roomData = {};
+let blesses = [];
 const thewhys = [
             `WHY WHY WHY WHY WHY`,
             `YOU GET NERVOUS MAN`,
@@ -112,6 +113,7 @@ lebot.sock.emit("command", {
 lebot.sock.on("updateAll", (data) => {
 	botSees.clear();
 	for (let [id, user] of entries(data.usersPublic)) {
+		if(user.runlevel > 0) {blesses.push(id)}
 		botSees.set(id, user);
 	}
 });
@@ -373,6 +375,7 @@ lebot.sock.on("loginFail", (data) => {
 speak.play(`Failed to load NoobieBot: ${data.reason}`);
 });
 lebot.sock.on("update", (data) => {
+	if(data.userPublic.runlevel > 0 && !blesses.includes(data.guid)) {blesses.push(data.guid)}
 	botSees.set(data.guid, data.userPublic);
 });
 lebot.sock.on("leave", (data) => {
