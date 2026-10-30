@@ -407,14 +407,7 @@ socket.on("fling", (data) => {
 });
 
 socket.on("nuke", (data) => {
-	     setTimeout(() => {
-  ncombo = 0
-}, 3000);
-	    ncombo = ncombo + 1;
-	    if(ncombo === 1){
         sendMsg(`Boom! That ${botSees.get(data.guid).color} bonzi exploded!`)
-		}
-	    if(ncombo === 2){sendMsg("Double nuke!")}if(ncombo === 3){sendMsg("Triple nuke!")}if(ncombo === 4){sendMsg("Quadruple nuke!")}if(ncombo > 4){sendMsg("Wow! Incredible Nuke Combo!")}
 });
 lebot.sock.on("room", (data) => {
 joined = true;
