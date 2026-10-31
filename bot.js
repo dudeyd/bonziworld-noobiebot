@@ -1,3 +1,4 @@
+let array = [];
 let lebot = {"sock":io("//"),"name":"NoobieBot", "guid":null};
 let botSees = new Map;
 let roomData = {};
@@ -405,11 +406,14 @@ lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: `${lebot.nam
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 lebot.sock.on("blessed", botBlessedAvatar);
 lebot.sock.on("fling", (data) => {
-        sendMsg(`Fling! That ${botSees.get(data.guid).color} bonzi got thrown away!`)
+	array = botSees.get(data.guid).color.split();
+        sendMsg(`Swing! That ${array[1]} bonzi got thrown away!`)
 });
 
-socket.on("nuke", (data) => {
-        sendMsg(`Boom! That ${botSees.get(data.guid).color} bonzi exploded!`)
+
+lebot.sock.on("nuke", (data) => {
+	array = botSees.get(data.guid).color.split();
+        sendMsg(`Boom! That ${array[1]} bonzi exploded!`)
 });
 lebot.sock.on("room", (data) => {
 joined = true;
