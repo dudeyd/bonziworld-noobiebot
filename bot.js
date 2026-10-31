@@ -402,7 +402,7 @@ speak.play("NoobieBot disconnected");
 lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: `${lebot.name} (${prefix}help)`,room: login_room.value,});})
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 lebot.sock.on("blessed", botBlessedAvatar);
-socket.on("fling", (data) => {
+lebot.sock.on("fling", (data) => {
         sendMsg(`Fling! That ${botSees.get(data.guid).color} bonzi got thrown away!`)
 });
 
