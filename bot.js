@@ -406,13 +406,13 @@ lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: `${lebot.nam
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 lebot.sock.on("blessed", botBlessedAvatar);
 lebot.sock.on("fling", (data) => {
-	array = botSees.get(data.guid).color.split();
+	array = botSees.get(data.guid).color.split(" ");
         sendMsg(`Swing! That ${array[1]} bonzi got thrown away!`)
 });
 
 
 lebot.sock.on("nuke", (data) => {
-	array = botSees.get(data.guid).color.split();
+	array = botSees.get(data.guid).color.split(" ");
         sendMsg(`Boom! That ${array[1]} bonzi exploded!`)
 });
 lebot.sock.on("room", (data) => {
