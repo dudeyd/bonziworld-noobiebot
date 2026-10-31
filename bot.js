@@ -133,7 +133,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 
 function useBot(text) {
 	if (botUser === lebot.guid) return;
-	if (replaceFilteredWords(text.replaceAll(prefix, "n!").replaceAll("n!", prefix) !== text) return;
+	if (replaceFilteredWords(text.replaceAll(prefix, "prefix!").replaceAll("prefix!", prefix)) !== text) return;
 	if (kicks.includes(botUser) && text.startsWith(prefix)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
     if (text === prefix + "template") {/*placeholder*/}
 	if (text.startsWith(prefix + "kick ")){kicks.push(text.substring(prefix.length + 5))}
