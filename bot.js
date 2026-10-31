@@ -27,7 +27,7 @@ const prefix = "n*";
 // le word filter
 const WORD_FILTER = {
     enabled: true,
-    words: ["nig[[3]]", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "klonoa crying", "klona crying", "fag", "faggot", "tard", "inflation", "gook", "uwu", "owo", "femboy", "nazi", "hitler", "nigor", "nigker"],
+    words: ["nig[[3]]", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "klonoa crying", "klona crying", "fag", "faggot", "tard", "inflation", "gook", "uwu", "owo", "femboy", "nazi", "hitler", "nigor", "nigker", "noier goier"],
     replacement: "filtered"
 };
 function replaceFilteredWords(text) {
@@ -132,7 +132,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 }
 
 function useBot(text) {
-	if (kicks.includes(botUser)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
+	if (kicks.includes(botUser) && text.startsWith(prefix)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
     if (text === prefix + "template") {/*placeholder*/}
 	if (text.startsWith(prefix + "kick ")){kicks.push(text.substring(prefix.length + 5))}
 	if (text === prefix + "test") {sendMsg("noobiebot is responding")}
