@@ -28,7 +28,7 @@ const prefix = "n*";
 // le word filter
 const WORD_FILTER = {
     enabled: true,
-    words: ["nig[[3]]", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "klonoa crying", "klona crying", "fag", "faggot", "tard", "inflation", "gook", "uwu", "owo", "femboy", "nazi", "hitler", "nigor", "nigker", "noier goier"],
+    words: ["nig", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "klonoa crying", "klona crying", "fag", "faggot", "tard", "inflation", "gook", "uwu", "owo", "femboy", "nazi", "hitler", "nigor", "nigker", "noier goier","fling me","fuck me","nuke me","ban me","kick me"],
     replacement: "filtered"
 };
 function replaceFilteredWords(text) {
@@ -405,7 +405,7 @@ speak.play("NoobieBot disconnected");
 lebot.sock.on("connect", (data) => {lebot.sock.emit("login", {name: `${lebot.name} (${prefix}help)`,room: login_room.value,});})
 socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = false;});
 lebot.sock.on("blessed", botBlessedAvatar);
-lebot.sock.on("fling", (data) => {
+/*lebot.sock.on("fling", (data) => {
 	array = botSees.get(data.guid).color.split(" ");
         sendMsg(`Swing! That ${array[0]} bonzi got thrown away!`)
 });
@@ -414,7 +414,7 @@ lebot.sock.on("fling", (data) => {
 lebot.sock.on("nuke", (data) => {
 	array = botSees.get(data.guid).color.split(" ");
         sendMsg(`Boom! That ${array[0]} bonzi exploded!`)
-});
+});*/
 lebot.sock.on("room", (data) => {
 joined = true;
 lebot.guid = data.you;
