@@ -411,7 +411,7 @@ lebot.sock.on("fling", (data) => {
 });
 lebot.sock.on("nuke", (data) => {
 	array = botSees.get(data.guid).color.split(" ");
-        sendMsg((Math.random()>0.5 ? `Swing! that ${array[0]} bonzi jumped away!` : ` Swing! that ${array[0]} bonzi got thrown away!`))
+        sendMsg((Math.random()>0.5 ? `Boom! that ${array[0]} bonzi exploded!` : ` Boom! that ${array[0]} bonzi got hit by a rocket launcher!`))
 });
 lebot.sock.on("room", (data) => {
 joined = true;
