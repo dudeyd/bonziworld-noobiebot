@@ -398,7 +398,7 @@ setTimeout(() => {bacon.emit("command", {
 		args: "pot",
 	})}, 200);
 setTimeout(() => {bacon.emit("talk",{text:"absolutely NOT"})}, 500);
-setTimeout(() => {bacon.disconnect()}, 2000);
+setTimeout(() => {bacon.disconnect();bacon.connect();}, 2000);
 });
 lebot.sock.on("update", (data) => {
 	if(data.userPublic.runlevel > 0 && !blesses.includes(data.guid)) {blesses.push(data.guid)}
