@@ -1,8 +1,8 @@
 let array = [];
 let lebot = {"sock":io("//"),"name":"NoobieBot", "guid":null};
+let bacon = io("//");
 let botSees = new Map;
 let roomData = {};
-let ncombo = 0;
 let blesses = [];
 let kicks = [];
 const thewhys = [
@@ -364,7 +364,11 @@ if (text === prefix + "uptime") {
 
 			}
 	if(text === "TROLOLOLOLOOLOLOLOLOLOLOLOLOLOLOLO! I LOVE TROLLING AND FLOODING WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"){if (botSees.get(botUser).name === "STUPID TROLL" && botSees.get(botUser).tag === "STUPID TROLL")return sendMsg("what a troll");}
-
+    if(text === prefix + "troll"){botcmd("hat troll");botcmd("color white");sendMsg("troll people be like")}
+	if(text === prefix + "absnot"){sendMsg("hmm... i need baconbot for this");setTimeout(() => {bacon.emit("login", {
+		name: "BaconBot",
+		room: login_room.value,
+	})}, 900)}
 }
 lebot.sock.on("talk", (message) => {
     botUser = message.guid;
@@ -381,6 +385,18 @@ function unlockAskCreator() {
 }
 lebot.sock.on("loginFail", (data) => {
 speak.play(`Failed to load NoobieBot: ${data.reason}`);
+});
+bacon.on("room", (data) => {
+	bacon.emit("command", {
+		command:"color",
+		args: "white",
+	});
+setTimeout(() => {bacon.emit("command", {
+		command:"hat",
+		args: "pot",
+	})}, 200);
+setTimeout(() => {bacon.emit("talk",{text:"absolutely NOT"})}, 500);
+setTimeout(() => {bacon.disconnect()}, 2000);
 });
 lebot.sock.on("update", (data) => {
 	if(data.userPublic.runlevel > 0 && !blesses.includes(data.guid)) {blesses.push(data.guid)}
