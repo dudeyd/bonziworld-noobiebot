@@ -407,11 +407,11 @@ socket.on("room", (data) => {hostID = data.you;socketNotListeningToBotRoom = fal
 lebot.sock.on("blessed", botBlessedAvatar);
 lebot.sock.on("fling", (data) => {
 	array = botSees.get(data.guid).color.split(" ");
-        sendMsg(`Swing! That ${array[0]} bonzi got thrown away!`)
+        sendMsg((Math.random()>0.5 ? `Swing! that ${array[0]} bonzi jumped away!` : ` Swing! that ${array[0]} bonzi got thrown away!`))
 });
 lebot.sock.on("nuke", (data) => {
 	array = botSees.get(data.guid).color.split(" ");
-        sendMsg(`Boom! That ${array[0]} bonzi exploded!`)
+        sendMsg((Math.random()>0.5 ? `Swing! that ${array[0]} bonzi jumped away!` : ` Swing! that ${array[0]} bonzi got thrown away!`))
 });
 lebot.sock.on("room", (data) => {
 joined = true;
