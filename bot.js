@@ -149,7 +149,7 @@ function useBot(text) {
     if (text === prefix + "help 1") return sendMsg(help);
 	if (text.startsWith(prefix + "mario") && lockcmd !== true) return sendMsg(text.substring(prefix.length + 5) + "\\n" + "▒▒▒▒▒▒▒▒▒▄▄▄▄▒▒▒▒▒▒▒ ▒▒▒▒▒▒▄▀▀▓▓▓▀█▒▒▒▒▒▒ ▒▒▒▒▄▀▓▓▄██████▄▒▒▒▒ ▒▒▒▄█▄█▀░░▄░▄░█▀▒▒▒▒ ▒▒▄▀░██▄░░▀░▀░▀▄▒▒▒▒ ▒▒▀▄░░▀░▄█▄▄░░▄█▄▒▒▒ ▒▒▒▒▀█▄▄░░▀▀▀█▀▒▒▒▒▒ ▒▒▒▄▀▓▓▓▀██▀▀█▄▀▀▄▒▒ ▒▒█▓▓▄▀▀▀▄█▄▓▓▀█░█▒▒ ▒▒▀▄█░░░░░█▀▀▄▄▀█▒▒▒ ▒▒▒▄▀▀▄▄▄██▄▄█▀▓▓█▒▒ ▒▒█▀▓█████████▓▓▓█▒▒ ▒▒█▓▓██▀▀▀▒▒▒▀▄▄█▀▒▒ ▒▒▒▀▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
 	if (text.startsWith(prefix + "toby") && lockcmd !== true) return sendMsg(text.substring(prefix.length + 5) + "\\n" + "░▄▀▄▀▀▀▀▄▀▄░░░░░░░░░ ░█░░░░░░░░▀▄░░░░░░▄░ █░░▀░░▀░░░░░▀▄▄░░█░█ █░▄░█▀░▄░░░░░░░▀▀░░█ █░░▀▀▀▀░░░░░░░░░░░░█ █░░░░░░░░░░░░░░░░░░█ █░░░░░░░░░░░░░░░░░░█ ░█░░▄▄░░▄▄▄▄░░▄▄░░█░ ░█░▄▀█░▄▀░░█░▄▀█░▄▀░ ░░▀░░░▀░░░░░▀░░░▀░░░");
-	if (text === prefix + "help") return sendMsg(`-%%^^$r$${lebot.name} Help Command Categories$r$^^%% ${prefix}help misc\\n ${prefix}help system\\n ${prefix}help insult\\n ${prefix}help fun`);    if (text === prefix + "help 2") return sendMsg(help2);
+	if (text === prefix + "help") return sendMsg(`-%%^^$r$${lebot.name} Help Command Categories$r$^^%% ${prefix}help misc\\n ${prefix}help system\\n ${prefix}help insult\\n ${prefix}help fun\\n ${prefix}help react`);    if (text === prefix + "help 2") return sendMsg(help2);
 	if (text === prefix + "help system") return sendMsg(system);
     if (text === prefix + "help fun") return sendMsg(fun);
     if (text === prefix + "help react") return sendMsg(react);
