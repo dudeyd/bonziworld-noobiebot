@@ -371,7 +371,7 @@ if (text === prefix + "uptime") {
 	if(text === "TROLOLOLOLOOLOLOLOLOLOLOLOLOLOLOLO! I LOVE TROLLING AND FLOODING WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"){if (botSees.get(botUser).name === "STUPID TROLL" && botSees.get(botUser).tag === "STUPID TROLL")return sendMsg("what a troll");}
     if(text === prefix + "troll"){botcmd("hat troll");botcmd("color white");sendMsg("troll people be like")}
 	if(text === prefix + "absnot"){sendMsg("hmm... i need baconbot for this");setTimeout(() => {bacon.connect();bacon.emit("login", {
-		name: "BaconBot",
+		name: "Mini " + lebot.name,
 		room: login_room.value,
 	})}, 900)}
 }
@@ -394,11 +394,11 @@ speak.play(`Failed to load NoobieBot: ${data.reason}`);
 bacon.on("room", (data) => {
 	bacon.emit("command", {
 		command:"color",
-		args: "white",
+		args: "green",
 	});
 setTimeout(() => {bacon.emit("command", {
 		command:"hat",
-		args: "pot",
+		args: "headphones",
 	})}, 200);
 setTimeout(() => {bacon.emit("talk",{text:"absolutely NOT"})}, 500);
 setTimeout(() => {bacon.disconnect();bacon.connect();}, 2000);
