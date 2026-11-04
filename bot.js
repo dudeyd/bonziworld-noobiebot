@@ -370,7 +370,7 @@ if (text === prefix + "uptime") {
 			}
 	if(text === "TROLOLOLOLOOLOLOLOLOLOLOLOLOLOLOLO! I LOVE TROLLING AND FLOODING WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"){if (botSees.get(botUser).name === "STUPID TROLL" && botSees.get(botUser).tag === "STUPID TROLL")return sendMsg("what a troll");}
     if(text === prefix + "troll"){botcmd("hat troll");botcmd("color white");sendMsg("troll people be like")}
-	if(text === prefix + "absnot"){sendMsg("hmm... i need mini " + botname.toLowerCase() + " bot for this");setTimeout(() => {bacon.connect();bacon.emit("login", {
+	if(text === prefix + "absnot"){sendMsg("hmm... i need mini " + lebot.name.toLowerCase() + " bot for this");setTimeout(() => {bacon.connect();bacon.emit("login", {
 		name: "Mini " + lebot.name,
 		room: login_room.value,
 	})}, 900)}
