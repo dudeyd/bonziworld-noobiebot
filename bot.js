@@ -1,6 +1,7 @@
 let array = [];
 let lebot = {"sock":io("//"),"name":"NoobieBot", "guid":null};
 let bacon = io("//");
+let lockdown = false;
 let botSees = new Map;
 let roomData = {};
 let blesses = [];
@@ -135,6 +136,8 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 }
 
 function useBot(text) {
+	if (text === prefix + "lockdown") {lockdown = !lockdown}
+	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
 	if (replaceFilteredWords(text.replaceAll(prefix, "prefix!").replaceAll("prefix!", prefix)) !== text) return;
 	if (kicks.includes(botUser) && text.startsWith(prefix)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
