@@ -435,10 +435,12 @@ lebot.sock.on("nuke", (data) => {
         sendMsg((Math.random()>0.5 ? `Boom! that ${array[0]} bonzi exploded!` : ` Boom! that ${array[0]} bonzi got hit by a rocket launcher!`))
 });
 lebot.sock.on("room", (data) => {
+	try{
 joined = true;
 lebot.guid = data.you;
 setTimeout(() => {useBot(`${prefix}restore`)}, 500);
 roomid = data.room;
+	}catch(err){alert(err)}
 });
 setInterval(() => {
         lebot.sock.emit("typing", 1);
