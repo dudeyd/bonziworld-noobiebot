@@ -139,7 +139,7 @@ function useBot(text) {
 	if (text === prefix + "lockdown") {lockdown = !lockdown}
 	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
-	if (replaceFilteredWords(text.replaceAll(prefix, "")) !== text) return;
+	if (replaceFilteredWords(text.replaceAll(prefix, "")) === WORD_FILTER.replacement) return;
 	if (kicks.includes(botUser) && text.startsWith(prefix)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
     if (text === prefix + "template") {/*placeholder*/}
 	if (text.startsWith(prefix + "kick ")){kicks.push(text.substring(prefix.length + 5))}
