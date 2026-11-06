@@ -148,7 +148,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 }
 
 function useBot(text) {
-	if (replaceFilteredWords(text.replaceAll(prefix,"")) !== text)return sendMsg("a");
+	if (replaceFilteredWords(text.replace(prefix,"")) !== text)return sendMsg("a");
 	if (text === prefix + "lockdown") {lockdown = !lockdown}
 	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
