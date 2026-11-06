@@ -29,7 +29,7 @@ const prefix = "n*";
 // le word filter
 const WORD_FILTER = {
     enabled: true,
-    words: ["nig", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "crying", "~", "fag", "faggot", "tard", "inflation", "gook", "uwu", "owo", "femboy", "nazi", "hitler", "nigor", "nigker", "nickh", "nihg", "noier goier","fling me","fuck me","nuke me","ban me","kick me", "dildo", "deal dough", "deel doo", "penis"],
+    words: ["nig", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "crying", "~", "fag", "faggot", "tard", "inflation", "gook", "uwu", "owo", "femboy", "nazi", "hitler", "nigor", "nigker", "nickher", "nihger", "noier goier","fling me","fuck me","nuke me","ban me","kick me"],
     replacement: "filtered"
 };
 function replaceFilteredWords(text) {
