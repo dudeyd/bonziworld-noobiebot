@@ -375,7 +375,8 @@ if (text === prefix + "uptime") {
 	})}, 900)}
 }
 lebot.sock.on("talk", (message) => {
-	if (replaceFilteredWords(message.text.replaceAll(prefix, "")) === WORD_FILTER.replacement) return;
+	array = data.text.split(" ");
+	if (replaceFilteredWords(array.slice(1).join(" ")) === WORD_FILTER.replacement) return;
     botUser = message.guid;
     msg = message.text.replaceAll("{NAME}", "USER");
     useBot(msg);
