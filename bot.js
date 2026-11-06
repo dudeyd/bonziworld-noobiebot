@@ -25,12 +25,10 @@ let askCommandDisabled = false;
 let botUser = null;
 const startTime = Date.now();
 let target = null;
-const prefix = "n*";
-// le word filter
-const WORD_FILTER = {
+const prefix = "n*";const WORD_FILTER = {
     enabled: true,
-    words: ["nig", "nighr", "nigher", "nigha", "nigger", "nigga", "i rape", "i raype", "crying", "~", "fag", "faggot", "tard", "inflation", "gook", "uwu", "owo", "femboy", "nazi", "hitler", "nigor", "nigker", "nickher", "nihger", "noier goier","fling me","fuck me","nuke me","ban me","kick me"],
-    replacement: "filtered"
+    words: ["nigr", "nige", "nighr", "nigher", "nigha", "nigger", "nigga", "nigker", "nigka", "nickgurr", "nigur", "irape", "iraipe", "iraip"],
+    replacement: "Fuck off with your attempts."
 };
 function replaceFilteredWords(text) {
     if (!WORD_FILTER.enabled || typeof text !== 'string') {
@@ -55,8 +53,21 @@ function replaceFilteredWords(text) {
     cleanText = cleanText.toLowerCase().split('').map(char => leetMap[char] || char).join('');
 
     cleanText = cleanText.replace(/[^a-z0-9]/g, "");
-
+    
+    const noSpacesText = cleanText.replace(/\s/g, "");
+    
     for (const word of WORD_FILTER.words) {
+        if (!word) continue;
+        
+        const normalTarget = word.toLowerCase().trim();
+        const compressedTarget = normalTarget.replace(/\s/g, "");
+
+        if (cleanText.includes(normalTarget) || noSpacesText.includes(compressedTarget)) {
+            return WORD_FILTER.replacement;
+        }
+    }
+
+    /*for (const word of WORD_FILTER.words) {
         if (!word) continue;
         
         const targetWord = word.toLowerCase().replace(/[^a-z0-9]/g, "");
@@ -65,7 +76,7 @@ function replaceFilteredWords(text) {
             // Intercept the message payload entirely
             return WORD_FILTER.replacement;
         }
-    }
+    }*/
 
     return text;
 }
