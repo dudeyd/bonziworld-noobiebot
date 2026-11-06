@@ -25,7 +25,8 @@ let askCommandDisabled = false;
 let botUser = null;
 const startTime = Date.now();
 let target = null;
-const prefix = "n*";const WORD_FILTER = {
+const prefix = "n*";
+const WORD_FILTER = {
     enabled: true,
     words: ["nigr", "nige", "nighr", "nigher", "nigha", "nigger", "nigga", "nigker", "nigka", "nickgurr", "nigur", "irape", "iraipe", "iraip"],
     replacement: "Fuck off with your attempts."
@@ -147,6 +148,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 }
 
 function useBot(text) {
+	if (replaceFilteredWords(text.replaceAll(prefix,"")) !== text)return sendMsg("a");
 	if (text === prefix + "lockdown") {lockdown = !lockdown}
 	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
@@ -386,9 +388,7 @@ if (text === prefix + "uptime") {
 	})}, 900)}
 }
 lebot.sock.on("talk", (message) => {
-	array = data.text.split(" ");
-	if (replaceFilteredWords(array.slice(1).join(" ")) === WORD_FILTER.replacement) return;
-    botUser = message.guid;
+	botUser = message.guid;
     msg = message.text.replaceAll("{NAME}", "USER");
     useBot(msg);
 });
