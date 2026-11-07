@@ -151,14 +151,12 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 }
 
 function useBot(text) {
-	if (replaceFilteredWords(text) !== text)return;
+	if (replaceFilteredWords(text) !== text)return sendMsg("yeds");
 	if (text === prefix + "lockdown" && botUser === hostID) {lockdown = !lockdown}
 	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
 	if (kicks.includes(botUser) && text.startsWith(prefix)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
-    if (text.startWith(prefix) && cooldown > 0) return sendMsg("Woah woah woah! Slow down!");
-	if (text.startsWith(prefix)) {cooldown = 2}
-	if (text === prefix + "template") {/*placeholder*/}
+    if (text === prefix + "template") {/*placeholder*/}
 	if (text.startsWith(prefix + "kick ") && botUser === hostID){kicks.push(text.substring(prefix.length + 5))}
 	if (text === prefix + "test") {sendMsg("noobiebot is responding")}
     if (text === prefix + "update") {
