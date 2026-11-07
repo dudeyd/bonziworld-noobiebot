@@ -359,6 +359,7 @@ const gibberishmessage = ["h@x du da de d3!", "tygtyty@", "@plle p0i", "sal@d@",
 if (text === prefix + "pollwhy") {
                 botcmd("advpoll WHY WHY WHY WHY WHY;YOU GET NERVOUS MAN;WHYWHYWHYHYHYHYHYHHYHYHYHYH");
 }
+	if(text === prefix + "spell"){array = text.split("");sendMsg("``" + array.join("````"))}
 if (text.startsWith(prefix + "ack")) {
     /* if (lockcmd === true) { */
             sendMsg("disabled")
