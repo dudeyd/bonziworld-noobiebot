@@ -6,7 +6,7 @@ let botSees = new Map;
 let roomData = {};
 let blesses = [];
 let kicks = [];
-let cooldown = 0;
+let cooldown = -99;
 const thewhys = [
             `WHY WHY WHY WHY WHY`,
             `YOU GET NERVOUS MAN`,
