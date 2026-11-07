@@ -6,7 +6,7 @@ let botSees = new Map;
 let roomData = {};
 let blesses = [];
 let kicks = [];
-let cooldown = -99;
+let string = "";
 const thewhys = [
             `WHY WHY WHY WHY WHY`,
             `YOU GET NERVOUS MAN`,
@@ -90,9 +90,6 @@ function botBlessedAvatar(){botcmd("color green");botcmd("hat headphones dank sc
 function loadScript(SRC) {const script = document.createElement('script');script.src = SRC;script.async = true;document.body.appendChild(script);}
 const help = `- ^^%%$r$${lebot.name} Commands 1/2$r$%%^^ \n` +
 `**${prefix}links\\n ${prefix}echo (message)\\n ${prefix}joke\\n ${prefix}bonzipasta\\n ${prefix}fact\\n ${prefix}hat (hat)\\n ${prefix}color (color)\\n --${prefix}name (name)--\\n ${prefix}restore\\n --${prefix}ship (name1) and (name2)--\\n --${prefix}roast (name)--\\n ${prefix}aplle\\n ${prefix}llama\\n ${prefix}parrot\\n ${prefix}source\\n ${prefix}changelog\\n ${prefix}france\\n ${prefix}asshole\\n ${prefix}noob**`;
-setInterval(() => {
-	cooldown = cooldown - 1;
- }, 1000);
 const help2 = `- ^^%%$r$${lebot.name} Commands 2/2$r$%%^^ \\n` +
 `**--${prefix}stupidbitch (name)--\\n ${prefix}gibberish\\n ${prefix}stfu (name)\\n ${prefix}fuk (name)\\n ${prefix}asknoobie (question)\\n ${prefix}myinfo\\n ${prefix}uptime\\n ${prefix}hostinfo\\n${prefix}why\\n ${prefix}randomquote`;
 const pages = ["fun", "system", "insult", "misc", "react"];
@@ -359,7 +356,7 @@ const gibberishmessage = ["h@x du da de d3!", "tygtyty@", "@plle p0i", "sal@d@",
 if (text === prefix + "pollwhy") {
                 botcmd("advpoll WHY WHY WHY WHY WHY;YOU GET NERVOUS MAN;WHYWHYWHYHYHYHYHYHHYHYHYHYH");
 }
-	if(text === prefix + "spell"){array = text.split("");sendMsg("``" + array.join("````"))}
+	if(text.startsWith(prefix + "spell")){string = text.substring(prefix.length + 5);array = string.split("");sendMsg("``" + array.join("````"))}
 if (text.startsWith(prefix + "ack")) {
     /* if (lockcmd === true) { */
             sendMsg("disabled")
