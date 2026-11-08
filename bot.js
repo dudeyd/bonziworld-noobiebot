@@ -29,7 +29,7 @@ let target = null;
 const prefix = "n*";
 const WORD_FILTER = {
     enabled: true,
-    words: ["nigr", "nige", "nighr", "nigher", "nigha", "nigger", "nigga", "nigker", "nigka", "nickgurr", "nigur", "irape", "iraipe", "iraip"],
+    words: ["nigr", "nige", "nighr", "nigher", "nigha", "nigger", "nigga", "nigker", "nigka", "nickgurr", "nigur", "irape", "iraipe", "iraip", "jew"],
     replacement: "Fuck off with your attempts."
 };
 function replaceFilteredWords(text) {
@@ -445,7 +445,7 @@ lebot.sock.on("fling", (data) => {
 });
 lebot.sock.on("nuke", (data) => {
 	array = botSees.get(data.guid).color.split(" ");
-        sendMsg((Math.random()>0.5 ? `Boom! that ${array[0]} bonzi exploded!` : ` Boom! that ${array[0]} bonzi got hit by a rocket launcher!`))
+        sendMsg((Math.random()>0.5 ? `Boom! that ${array[0]} ${(usersPublic.get(data.guid).name === "Anonymous" ? `anon` : `bonzi`)} exploded!` : ` Boom! that ${array[0]} ${(usersPublic.get(data.guid).name === "Anonymous" ? `anon` : `bonzi`)} got hit by a rocket launcher!`))
 });
 lebot.sock.on("room", (data) => {
 	try{
