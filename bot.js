@@ -83,7 +83,7 @@ function replaceFilteredWords(text) {
     return text;
 }
 const lockcommand = true
-const creator = "Noobie80";/*yes thats me*/
+const creator = "Noobie80";
 let isPremium = false;
 const startupSound = new Audio('https://files.catbox.moe/wqek9l.mp3'); //unused
 function botBlessedAvatar(){botcmd("color green");botcmd("hat headphones dank scarf")}
