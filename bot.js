@@ -136,8 +136,6 @@ lebot.sock.on("updateAll", (data) => {
 		botSees.set(id, user);
 	}
 });
-setTimeout(() => { socket.emit("command", { list: ["color", "green"] }); }, 1000);
-setTimeout(() => { socket.emit("command", { list: ["hat", "headphones"] }); }, 1000);
 function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
                         text: reply,
                         quote: {
