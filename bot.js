@@ -370,7 +370,7 @@ if (text.startsWith(prefix + "ack")) {
     }, 2000);
         } */ //No, Just no.
 }
-	if (text === "randomsentence" && !lockcmd) sendMsg(`${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} `)
+	if (text === prefix + "randomsentence" && !lockcmd) sendMsg(`${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} `)
 if (text === prefix + "uptime") {
     const seconds = Math.floor((Date.now() - startTime) / 1000);
 
