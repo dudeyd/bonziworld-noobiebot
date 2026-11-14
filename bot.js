@@ -1,4 +1,5 @@
 let array = [];
+let wordsSaidByOtherUsers = [];
 let lebot = {"sock":io("//"),"name":"NoobieBot", "guid":null};
 let bacon = io("//");
 let lockdown = false;
@@ -150,6 +151,7 @@ function useBot(text) {
 	if (text === prefix + "lockdown" && botUser === hostID) {lockdown = !lockdown}
 	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
+	if (!text.startsWith(prefix)) wordsSaidByOtherUsers = wordsSaidByOtherUsers.concat(text.split(" "));
 	if (kicks.includes(botUser) && text.startsWith(prefix)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
     if (text === prefix + "template") {/*placeholder*/}
 	if (text.startsWith(prefix + "kick ") && botUser === hostID){kicks.push(text.substring(prefix.length + 5))}
@@ -368,6 +370,7 @@ if (text.startsWith(prefix + "ack")) {
     }, 2000);
         } */ //No, Just no.
 }
+	if (text === "randomsentence" && !lockcmd) sendMsg(`${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} `)
 if (text === prefix + "uptime") {
     const seconds = Math.floor((Date.now() - startTime) / 1000);
 
