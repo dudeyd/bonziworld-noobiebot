@@ -30,7 +30,7 @@ let target = null;
 const prefix = "n*";
 const WORD_FILTER = {
     enabled: true,
-    words: ["nigr", "nige", "nighr", "nigher", "nigha", "nigger", "nigga", "nigker", "nigka", "nickgurr", "nigur", "irape", "iraipe", "iraip", "jew", "dzu", "cum", "fag", "tard", "penis", "cock", "dick", "pussy", "pousai"],
+    words: ["nigr", "nige", "nighr", "nigher", "nigha", "nigger", "nigga", "nigker", "nigka", "nickgurr", "nigur", "irape", "iraipe", "iraip", "jew", "dzu", "cum", "fag", "tard", "penis", "cock", "dick", "pussy", "pousai", "sex"],
     replacement: "Fuck off with your attempts."
 };
 function replaceFilteredWords(text) {
