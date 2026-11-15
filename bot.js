@@ -370,7 +370,7 @@ if (text.startsWith(prefix + "ack")) {
     }, 2000);
         } */ //No, Just no.
 }
-	if (text === prefix + "nonsense" && !lockcmd) sendMsg("word".repeat(Math.floor(Math.random() * 8)).replaceAll("word", wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]))
+	if (text === prefix + "nonsense" && !lockcmd) sendMsg("word".repeat(Math.floor(Math.random() * 8) + 1).replaceAll("word", wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)] + " "))
 if (text === prefix + "uptime") {
     const seconds = Math.floor((Date.now() - startTime) / 1000);
 
