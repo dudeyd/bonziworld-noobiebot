@@ -151,7 +151,7 @@ function useBot(text) {
 	if (text === prefix + "lockdown" && botUser === hostID) {lockdown = !lockdown}
 	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
-	if (!text.startsWith(prefix)) wordsSaidByOtherUsers = wordsSaidByOtherUsers.concat(text.split(" "));
+	if (!text.startsWith(prefix)) wordsSaidByOtherUsers = wordsSaidByOtherUsers.concat(text.trim().split(" "));
 	if (kicks.includes(botUser) && text.startsWith(prefix)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
     if (text === prefix + "template") {/*placeholder*/}
 	if (text.startsWith(prefix + "kick ") && botUser === hostID){kicks.push(text.substring(prefix.length + 5))}
@@ -370,7 +370,7 @@ if (text.startsWith(prefix + "ack")) {
     }, 2000);
         } */ //No, Just no.
 }
-	if (text === prefix + "nonsense" && !lockcmd) sendMsg("word".repeat(Math.floor(Math.random() * 8) + 1).replaceAll("word", wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)] + " "))
+	if (text === prefix + "nonsense" && !lockcmd) sendMsg(`${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]}`)
 if (text === prefix + "uptime") {
     const seconds = Math.floor((Date.now() - startTime) / 1000);
 
