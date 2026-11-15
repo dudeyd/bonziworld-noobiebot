@@ -103,7 +103,7 @@ const react = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 const system = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
 `**${prefix}links\\n ${prefix}uptime\\n ${prefix}hostinfo\\n ${prefix}myinfo**`;
 const misc = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \n` +
-`**${prefix}asknoobie**`;
+`**${prefix}asknoobie\\n${prefix}nonsense**`;
 /*const nukelines = [
             `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`,
             `I JUST DID A BOOM BOOM!`,
@@ -370,7 +370,7 @@ if (text.startsWith(prefix + "ack")) {
     }, 2000);
         } */ //No, Just no.
 }
-	if (text === prefix + "randomsentence" && !lockcmd) sendMsg(`${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} `)
+	if (text === prefix + "nonsense" && !lockcmd) sendMsg(`${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} `)
 if (text === prefix + "uptime") {
     const seconds = Math.floor((Date.now() - startTime) / 1000);
 
