@@ -419,14 +419,11 @@ setTimeout(() => {bacon.disconnect();bacon.connect();}, 2000);
 });
 lebot.sock.on("update", (data) => {
 	if(data.userPublic.runlevel > 0 && !blesses.includes(data.guid)) {blesses.push(data.guid)}
+	if(!botSees.has(data.guid) && replaceFilteredWords(botSees.get(data.guid).name !== botSees.get(data.guid).name))sendMsg("Hello, " + (botSees.get(data.guid).name === "Anonymous" ? `User` : botSees.get(data.guid).name) + ".")
 	botSees.set(data.guid, data.userPublic);
 });
 lebot.sock.on("leave", (data) => {
-if (data.guid === hostID) {
-lockcmd = true;
-sendMsg(`Host has surfed away. ${lebot.name} is staying here.`);
-socketNotListeningToBotRoom = true
-}
+if (botSees.has(data.guid)) botSees.delete(data.guid)
 });
 lebot.sock.on("kick", (data) => {
 speak.play(`NoobieBot got kicked:${data.reason}`);
