@@ -419,7 +419,6 @@ setTimeout(() => {bacon.disconnect();bacon.connect();}, 2000);
 });
 lebot.sock.on("update", (data) => {
 	if(data.userPublic.runlevel > 0 && !blesses.includes(data.guid)) {blesses.push(data.guid)}
-	if(!botSees.has(data.guid) && replaceFilteredWords(botSees.get(data.guid).name !== botSees.get(data.guid).name))sendMsg("Hello, " + (botSees.get(data.guid).name === "Anonymous" ? `User` : botSees.get(data.guid).name) + ".");
 	botSees.set(data.guid, data.userPublic);
 });
 lebot.sock.on("leave", (data) => {
