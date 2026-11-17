@@ -27,7 +27,7 @@ let askCommandDisabled = false;
 let botUser = null;
 const startTime = Date.now();
 let target = null;
-const prefix = "n*";
+const prefix = "%";
 let slowdown = false;
 const WORD_FILTER = {
     enabled: true,
@@ -412,7 +412,7 @@ lebot.sock.on("talk", (message) => {
 	botUser = message.guid;
     msg = message.text.replaceAll("{NAME}", "USER");
     useBot(msg);
-});
+});/*
 function lockAskCreator() {
   cannotAskNoobie = true;
   sendMsg(`-n*asknoobie has been disabled by the creator`);
@@ -420,7 +420,7 @@ function lockAskCreator() {
 function unlockAskCreator() {
   cannotAskNoobie = false;
   speak.play(`-n*asknoobie has been enabled by the creator`);
-}
+}*/
 lebot.sock.on("loginFail", (data) => {
 speak.play(`Failed to load NoobieBot: ${data.reason}`);
 });
