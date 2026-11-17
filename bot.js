@@ -406,12 +406,12 @@ if (text === prefix + "uptime") {
 		name: "Mini " + lebot.name,
 		room: login_room.value,
 	})}, 900)}
+	setTimeout(() => { slowdown = false;setTimeout(() => { slowdown = false; }, 6000); }, 1000);
 }
 lebot.sock.on("talk", (message) => {
 	botUser = message.guid;
     msg = message.text.replaceAll("{NAME}", "USER");
     useBot(msg);
-	setTimeout(() => { slowdown = false;setTimeout(() => { slowdown = false; }, 6000); }, 1000);
 });
 function lockAskCreator() {
   cannotAskNoobie = true;
