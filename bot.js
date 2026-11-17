@@ -28,6 +28,7 @@ let botUser = null;
 const startTime = Date.now();
 let target = null;
 const prefix = "n*";
+let slowdown = false;
 const WORD_FILTER = {
     enabled: true,
     words: ["nigr", "nige", "nighr", "nigher", "nigha", "nigger", "nigga", "nigker", "nigka", "nickgurr", "nigur", "irape", "iraipe", "iraip", "jew", "dzu", "cum", "fag", "tard", "penis", "cock", "dick", "pussy", "pousai", "sex"],
@@ -408,9 +409,9 @@ if (text === prefix + "uptime") {
 }
 lebot.sock.on("talk", (message) => {
 	botUser = message.guid;
-    slowdown = true;setTimeout(() => { slowdown = false; }, 7000);
     msg = message.text.replaceAll("{NAME}", "USER");
     useBot(msg);
+	setTimeout(() => { slowdown = false;setTimeout(() => { slowdown = false; }, 6000); }, 1000);
 });
 function lockAskCreator() {
   cannotAskNoobie = true;
