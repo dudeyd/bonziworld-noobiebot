@@ -148,7 +148,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 
 function useBot(text) {
 	if (replaceFilteredWords(text) !== text)return sendMsg("yeds");
-	if (text.startsWith(prefix) && slowdown) return sendMsg("please wait 4 seconds before using the bot");
+	if (text.startsWith(prefix) && slowdown) return sendMsg("please wait 6 seconds before using the bot");
 	if (text === prefix + "lockdown" && botUser === hostID) {lockdown = !lockdown}
 	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
@@ -406,7 +406,7 @@ if (text === prefix + "uptime") {
 		name: "Mini " + lebot.name,
 		room: login_room.value,
 	})}, 900)}
-	setTimeout(() => { slowdown = true;setTimeout(() => { slowdown = false; }, 2000); }, 1000);
+	setTimeout(() => { slowdown = true;setTimeout(() => { slowdown = false; }, 5000); }, 1000);
 }
 lebot.sock.on("talk", (message) => {
 	botUser = message.guid;
