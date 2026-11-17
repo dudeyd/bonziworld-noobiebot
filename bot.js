@@ -117,7 +117,9 @@ const otherUserNukes = [
             "[[kabum]]",
             "[[kabum]]! That bonzi did a [[bum bum]]"
         ];
-
+setInterval(() => {
+slowdown = 0;   
+}, 4000);
 function sendMsg(msg) {
     setTimeout(() => {
         lebot.sock.emit("talk", { text: msg });
@@ -148,6 +150,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 
 function useBot(text) {
 	if (replaceFilteredWords(text) !== text)return sendMsg("yeds");
+	if (text.startsWith(prefix) && slowdown)sendMsg("please wait 4 seconds before using the bot");
 	if (text === prefix + "lockdown" && botUser === hostID) {lockdown = !lockdown}
 	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
@@ -405,6 +408,7 @@ if (text === prefix + "uptime") {
 		name: "Mini " + lebot.name,
 		room: login_room.value,
 	})}, 900)}
+	slowdown = 1;
 }
 lebot.sock.on("talk", (message) => {
 	botUser = message.guid;
