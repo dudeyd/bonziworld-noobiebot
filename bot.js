@@ -152,7 +152,7 @@ function useBot(text) {
 	if (text === prefix + "lockdown" && botUser === hostID) {lockdown = !lockdown}
 	if (lockdown === true)return;
 	if (botUser === lebot.guid) return;
-	if (!text.startsWith(prefix)) wordsSaidByOtherUsers = wordsSaidByOtherUsers.concat(text.trim().substring(0, 500).replaceAll("butt","ass").split(" "));
+	if (!text.startsWith(prefix)) return wordsSaidByOtherUsers = wordsSaidByOtherUsers.concat(text.trim().substring(0, 500).replaceAll("butt","ass").split(" "));
 	if (kicks.includes(botUser) && text.startsWith(prefix)) return botreply("you were removed from the bot", botSees.get(botUser).name, text);
     if (text === prefix + "template") {/*placeholder*/}
 	if (text.startsWith(prefix + "kick ") && botUser === hostID){kicks.push(text.substring(prefix.length + 5))}
