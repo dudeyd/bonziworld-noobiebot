@@ -104,7 +104,7 @@ const react = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \\n` +
 const system = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \\n` +
 `**${prefix}links\\n ${prefix}uptime\\n ${prefix}hostinfo\\n ${prefix}myinfo**`;
 const misc = `- ^^%%$r$${lebot.name} Commands$r$%%^^ \\n` +
-`**${prefix}asknoobie\\n${prefix}nonsense\\n${prefix}yap (topic)**`;
+`**${prefix}asknoobie\\n${prefix}nonsense**`;
 /*const nukelines = [
             `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`,
             `I JUST DID A BOOM BOOM!`,
@@ -372,7 +372,7 @@ if (text.startsWith(prefix + "ack")) {
         } */ //No, Just no.
 }
 	if (text.startsWith(prefix + "yap")) {
-    if (!text.split(" ").slice(1)) {
+    /*if (!text.split(" ").slice(1)) {
         return sendMsg("undefined");
     }
 
@@ -386,7 +386,7 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(te
     })
     .catch(err => {
         sendMsg("undefined");
-    });
+    });*/sendMsg("this command has been removed");
 }
 	if (text === prefix + "nonsense" && !lockcmd) sendMsg(`${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]}`)
 if (text === prefix + "uptime") {
