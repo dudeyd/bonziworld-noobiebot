@@ -2,6 +2,7 @@ let array = [];
 let wordsSaidByOtherUsers = [];
 let lebot = {"sock":io("//"),"name":"NoobieBot", "guid":null};
 let bacon = io("//");
+let dontYap = false;
 let lockdown = false;
 let botSees = new Map;
 let roomData = {};
@@ -371,8 +372,8 @@ if (text.startsWith(prefix + "ack")) {
     }, 2000);
         } */ //No, Just no.
 }
-	if (text.startsWith(prefix + "yap")) {
-    /*if (!text.split(" ").slice(1)) {
+	if (text.startsWith(prefix + "yapabout") && !dontYap) {
+    if (!text.split(" ").slice(1)) {
         return sendMsg("undefined");
     }
 
@@ -386,7 +387,7 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(te
     })
     .catch(err => {
         sendMsg("undefined");
-    });*/sendMsg("this command has been removed");
+    });
 }
 	if (text === prefix + "nonsense" && !lockcmd) sendMsg(`${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]} ${wordsSaidByOtherUsers[Math.floor(Math.random() * wordsSaidByOtherUsers.length)]}`)
 if (text === prefix + "uptime") {
