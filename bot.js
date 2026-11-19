@@ -403,7 +403,7 @@ if (text === prefix + "uptime") {
 			}
 	if(text === "TROLOLOLOLOOLOLOLOLOLOLOLOLOLOLOLO! I LOVE TROLLING AND FLOODING WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"){if (botSees.get(botUser).name === "STUPID TROLL" && botSees.get(botUser).tag === "STUPID TROLL")return sendMsg("what a troll");}
     if(text === prefix + "troll"){botcmd("hat troll");botcmd("color white");sendMsg("troll people be like")}
-	if(text.startsWith(prefix + "avatar ")){array = text.split("|");if(!array)return sendMsg("usage: " + prefix + "avatar (COLOR)|(HATS)|(NAME)");botcmd("color " + array[0]);botcmd("hat " + array[1]);if(!!array[2])botcmd("name " + array[2])}
+	if(text.startsWith(prefix + "avatar ")){array = text.split("|");if(!array)return sendMsg("usage: " + prefix + "avatar (COLOR)|(HATS)|(NAME)");botcmd("color " + array[0]);setTimeout(() => {botcmd("hat " + array[1]);if(!!array[2])botcmd("name " + array[2])}, 500);}
 	if(text === prefix + "absnot"){sendMsg("hmm... i need mini " + lebot.name.toLowerCase() + " for this");setTimeout(() => {bacon.connect();bacon.emit("login", {
 		name: "Mini " + lebot.name,
 		room: login_room.value,
