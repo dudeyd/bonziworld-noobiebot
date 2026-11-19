@@ -148,7 +148,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 }
 
 function useBot(text) {
-	if (replaceFilteredWords(text) !== text && text.startsWith(prefix))return sendMsg("no bitch");
+	if (replaceFilteredWords(text) !== text)return sendMsg("your grounded");
 	if (text.startsWith(prefix) && slowdown) return sendMsg("please wait 6 seconds before using the bot");
 	if (text === prefix + "lockdown" && botUser === hostID) {lockdown = !lockdown}
 	if (lockdown === true)return;
