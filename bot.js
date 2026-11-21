@@ -466,6 +466,7 @@ lebot.sock.on("nuke", (data) => {
 	array = botSees.get(data.guid).color.split(" ");
         sendMsg((Math.random()>0.5 ? `Boom! that ${array[0].replace("_", "shadow")} ${(usersPublic.get(data.guid).name === "Anonymous" ? `anon` : `bonzi`)} exploded!` : ` Boom! that ${array[0].replace("_", "shadow")} ${(usersPublic.get(data.guid).name === "Anonymous" ? `anon` : `bonzi`)} got hit by a rocket launcher!`))
 });
+lebot.sock.on("delete", (data) => {if (data.ids.length > 1)sendMsg((Math.random()>0.5 ? `Bonk! that bonzi got banned!` : `Bonk! That bonzi got hit by a ban hammer!`))})
 lebot.sock.on("room", (data) => {
 	try{
 joined = true;
