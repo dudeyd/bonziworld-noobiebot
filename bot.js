@@ -413,7 +413,7 @@ if (text === prefix + "uptime") {
 }
 lebot.sock.on("talk", (message) => {
 	botUser = message.guid;
-    msg = message.text.replaceAll("{NAME}", "USER");
+    msg = message.text.replaceAll("{NAME}", "USER").replace("n*","%");
     useBot(msg);
 });/*
 function lockAskCreator() {
