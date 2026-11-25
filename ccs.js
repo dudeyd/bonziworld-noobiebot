@@ -16,7 +16,7 @@ function sendMsg(msg) {
 function doCmd(args){
   socket.emit("command", {command: args.split(" ")[0], param: args.split(" ")[1]});
 }
-setTimeout(() => { doCmd("color green"); }, 1000);
+setTimeout(() => { doCmd("color green");doCmd("name NoobieBot")}, 1000);
 setTimeout(() => { sendMsg(`NoobieBot Is Here. Type %help To See Commands. Created By Noobie80.`); }, 1000);
 setInterval(() => {
         socket.emit("typing", 1);
