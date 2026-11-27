@@ -440,7 +440,7 @@ setTimeout(() => {bacon.emit("talk",{text:"absolutely NOT"})}, 500);
 setTimeout(() => {bacon.disconnect();bacon.connect();}, 2000);
 });
 lebot.sock.on("update", (data) => {
-	if(!botSees.has(data.guid) && replaceFilteredWords(data.userPublic.name) === data.userPublic.name)sendMsg("hello, " + markup(data.userPublic.name).replace(/<[^>]*>?/gm, '').toLowerCase() + ".");
+	if(!botSees.has(data.guid) && replaceFilteredWords(data.userPublic.name) === data.userPublic.name && data.userPulic.name !== "Mini " + lebot.name)sendMsg("hello, " + markup(data.userPublic.name).replace(/<[^>]*>?/gm, '').toLowerCase() + ".");
 	if(data.userPublic.runlevel > 0 && !blesses.includes(data.guid)) {blesses.push(data.guid)}
 	botSees.set(data.guid, data.userPublic);
 });
