@@ -1,4 +1,5 @@
 let array = [];
+let greet = true;
 let wordsSaidByOtherUsers = [];
 let lebot = {"sock":io("//"),"name":"NoobieBot", "guid":null};
 let bacon = io("//");
@@ -148,6 +149,7 @@ function botreply(reply, user, usertext) {lebot.sock.emit("talk", {
 }
 
 function useBot(text) {
+	if (botUser === hostID && text.startsWith("togglegreet")){greet = !greet;sendMsg(`i will ${greet ? "now" : "no longer"} greet users`)}
 	if (replaceFilteredWords(text) !== text)return sendMsg("yeds");
 	if (text.startsWith(prefix) && slowdown) return sendMsg("please wait 6 seconds before using the bot");
 	if (text === prefix + "lockdown" && botUser === hostID) {lockdown = !lockdown}
