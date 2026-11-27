@@ -161,7 +161,7 @@ function useBot(text) {
     if (text === prefix + "update") {
 		if(botUser !== hostID) return
 		lebot.sock.destroy();							}
-    if (text === prefix + "links") {sendMsg("-dudeyd.github.io/bonziworld-noobiebot/links/")}
+    if (text === prefix + "links") {sendMsg("-dudeyd.github.io/bonziworld-noobiebot")}
 	if (text === prefix + "disableorenable") {if(botUser === hostID){lockcmd = !lockcmd}}
     if (text === prefix + "help 1") return sendMsg(help);
 	if (text.startsWith(prefix + "mario") && lockcmd !== true) return sendMsg(text.substring(prefix.length + 5) + "\\n" + "▒▒▒▒▒▒▒▒▒▄▄▄▄▒▒▒▒▒▒▒ ▒▒▒▒▒▒▄▀▀▓▓▓▀█▒▒▒▒▒▒ ▒▒▒▒▄▀▓▓▄██████▄▒▒▒▒ ▒▒▒▄█▄█▀░░▄░▄░█▀▒▒▒▒ ▒▒▄▀░██▄░░▀░▀░▀▄▒▒▒▒ ▒▒▀▄░░▀░▄█▄▄░░▄█▄▒▒▒ ▒▒▒▒▀█▄▄░░▀▀▀█▀▒▒▒▒▒ ▒▒▒▄▀▓▓▓▀██▀▀█▄▀▀▄▒▒ ▒▒█▓▓▄▀▀▀▄█▄▓▓▀█░█▒▒ ▒▒▀▄█░░░░░█▀▀▄▄▀█▒▒▒ ▒▒▒▄▀▀▄▄▄██▄▄█▀▓▓█▒▒ ▒▒█▀▓█████████▓▓▓█▒▒ ▒▒█▓▓██▀▀▀▒▒▒▀▄▄█▀▒▒ ▒▒▒▀▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
