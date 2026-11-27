@@ -6,6 +6,7 @@ let bacon = io("//");
 let dontYap = false;
 let lockdown = false;
 let botSees = new Map;
+let game1 = new Map;
 let roomData = {};
 let blesses = [];
 let kicks = [];
@@ -211,7 +212,9 @@ function useBot(text) {
         if (quote.text.startsWith("-said in")) return useBot(`${prefix}randomquote`);botreply(`-said in ${quote.time}`, !usersPublic.get(quote.guid).name ? "Unknown Gorilla" : usersPublic.get(quote.guid).name, quote.text);
 if (!usersPublic.get(quote.guid).name) return useBot(`${prefix}randomquote`);
     }
-    if (text.startsWith(prefix + "ship")) {
+	if(text === prefix + "cookie"){if(!game1.has(botUser))game1.set(botUser, {"clicks":0});sendMsg(`welcome to cookie clicker\\n type cc to get a cookie\\n your clicks:${game1.get(botUser)}`)}
+    if(text === "cc"){if(!game1.has(botUser)return;string = game1.get(botUser).clicks + 2;game1.set(botUser,{"clicks":string});sendMsg(game1.get(botUser).clicks + " clicks!")}
+	if (text.startsWith(prefix + "ship")) {
         const users = text.substring(prefix.length + 5).split(" and ");
         if (users.length !== 2) return sendMsg(" ");
         const percent = Math.floor(Math.random() * 101);
